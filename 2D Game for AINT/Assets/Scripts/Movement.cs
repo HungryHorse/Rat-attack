@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour {
     public float speed = 5.0f;
     Rigidbody2D rigidbody2D;
     public Animator animator;
+    public PlayerStats player;
 
     void Start()
     {
@@ -21,4 +22,9 @@ public class Movement : MonoBehaviour {
         rigidbody2D.angularVelocity = 0.0f;
     }
 
+
+    void UpdateStats()
+    {
+        speed = player.speed;
+    }
 }
