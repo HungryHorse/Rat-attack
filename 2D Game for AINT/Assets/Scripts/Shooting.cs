@@ -14,7 +14,7 @@ public class Shooting : MonoBehaviour {
     {
         GameObject Gun = GameObject.Find("Guns");
         Guns gunScript = Gun.GetComponent<Guns>();
-        GunChoice = 0;
+        GunChoice = 2;
         currentWeapon = new Weapons(gunScript.WeaponTypes[GunChoice]);
     }
 
@@ -38,7 +38,7 @@ public class Shooting : MonoBehaviour {
 
         if (currentWeapon.type == 0 && currentWeapon.rechamberTimer <= 0)
         {
-            GameObject newBullet = Instantiate(currentWeapon.bullet, SpawnPoint.transform.position, Quaternion.identity);
+            GameObject newBullet = Instantiate(currentWeapon.bullet, SpawnPoint.transform.position, SpawnPoint.transform.rotation);
             Bullet newBulletScript = newBullet.GetComponent<Bullet>();
             newBulletScript.lifeTime = currentWeapon.bulletLifeTime;
             newBulletScript.thisBullet = newBullet;
