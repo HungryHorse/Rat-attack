@@ -14,11 +14,25 @@ namespace Pathfinding {
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_a_i_destination_setter.php")]
 	public class AIDestinationSetter : VersionedMonoBehaviour {
 		/** The object that the AI should move to */
+
+        //My stuff
 		public Transform target;
+        public Transform player;
+        public Transform thisEnemy;
+        Enemy This;
+        //
+
 		IAstarAI ai;
 
 		void OnEnable () {
-			ai = GetComponent<IAstarAI>();
+
+            //My stuff
+            player = GameObject.Find("Player").transform;
+            thisEnemy = gameObject.transform;
+            This = gameObject.GetComponent<Enemy>();
+            //
+
+            ai = GetComponent<IAstarAI>();
 			// Update the destination right before searching for a path as well.
 			// This is enough in theory, but this script will also update the destination every
 			// frame as the destination is used for debugging and may be used for other things by other
@@ -32,6 +46,18 @@ namespace Pathfinding {
 
 		/** Updates the AI's destination every frame */
 		void Update () {
+
+            //My stuff
+            if (Vector3.Distance(player.position, thisEnemy.position) < 5 && This.sawPlayer)
+            {
+                target = player;
+            }
+            else
+            {
+                target = null;
+            }
+            //
+
 			if (target != null && ai != null) ai.destination = target.position;
 		}
 	}
