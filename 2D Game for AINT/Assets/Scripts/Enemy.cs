@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
 
             float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
             Quaternion newRotation = Quaternion.Euler(new Vector3(0.0f, 0.0f, rotZ + adjustmentAngle));
-            transform.rotation = newRotation;
+            transform.rotation = Quaternion.Lerp(gameObject.transform.rotation ,newRotation, Time.deltaTime * 5.0f);
         }
         else
         {
@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
 
         if (hit.collider != null)
         {
-            if (hit.collider.tag == "Player")
+            if (hit.collider.tag == "Player" && Vector3.Distance(player.transform.position, gameObject.transform.position) < 5)
             {
                 sawPlayer = true;
             }
