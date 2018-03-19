@@ -157,7 +157,7 @@ TilemapRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 652cb09b8f5f7464c96740f4e6a1aeec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2571,7 +2571,7 @@ TilemapRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 652cb09b8f5f7464c96740f4e6a1aeec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3086,7 +3086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAAIewbjSUBQAIAANAEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VMuS2jAQ/BVK57Blm01c5JYYluTAQi1J5eKLbI+xClly6bG8in/PSLaxl1ROiO6eUc9DvhImdAO5kWqlWLGWBZCvE+LO5NOEUM+9UcMkwiEiTMsajGL5N7HnThsgaAUrpaqXxR4SqY1GuKRcA1JKGhctELpOyAl/pnMXcsZTFLvTBU/zYHLDYw7CgBqkvbCXtSorck7rBoodu8AgjsJOHbYygbV0iuDps8suOWe680LMufGlJrTRFitBQcEo1uYNBE9zF1IB21fGJR/Hb8pSg+l8KXpeMIVdahOT79JULllN9aE19065dVdF3labcv0POw09XSpZ/+hvDQN3g6lYfnij55xqM+rsGF4MzkPfoSPlB5px+FOBeJUrJa0okDTKulCrIVoMf++FJRXkhwFvrT6Atvn/fFwNN1/7KeGsznwjn1tgx6VvuJ8+KBzOTzTsd0N3KRB1Ln5r+EX34yXqiBemtEGqq1I4e5m0yknJ0vfMVWNNIpUAD3emGxCUm/MW05jHAT5wo2sfmBfqnkl3ecf1r+AhxMODPggeqK083oelK3lcg6421nAmYDDtiFfsUyKFaPdr3JM+bGdVSfNR2N6y4uNqEYgDyOKIlnFAwzDMp9msiJ/n2QzCiM6+xED87jGBdVK+bY127cGpiSG5wD3rPxCTlaKN3/VC0eOKXWo5NshEKXe5AhCbDyk0KLwEH2axLBg2aAfGMOHnTa4p4TI/QJHe9amvdHkyiqZD9pQ07F0ah6Qk8Z+NlNzI7S9QSwMEFAAACAgAAAAh7KWgAHVtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPUMzTSUVBKL0osyCgGihiCOKWZKSB2tFKquUFqkrlRYpq5QaKhoWGybpJxirmJZZJxqqFRorGZeapSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAAAh7BuNJQFAAgAA0AQAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAAh7KWgAHVtAAAAeAAAAAkAJAAAAAAAAAAAAAAAjQIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABFAwAAAAA=
+    dataString: UEsDBBQAAAgIAAAAIezalUQaTAIAANkEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMuS2jAQ/BVK50DZZhMXuSWGJTmwUEu2cvFF2GOsQpZceiyPLf49I9nGXueE6J4Z9fSM/EGY0DVkRqq1YvlG5kC+T4g7ky8TQj33Sg2TCIeIMC0rMIplP8SRu9gAQStYIVW1yo+QSG00wgXlGpBS0rhsgdDHhFzwZ7pwKVc8RbE73fC0CCZ3PGYgDKg+NAxmi3kbHIazYN6GN9FWZJxWNeR7doM+KZrPvnY5TaDArtqYwHOZ5JzpVhUx19o3ndBaW+wJA3JGsUsvBSW4lBLYsTSu/DB/WxQaTOuCotclU+hXU5j8lKZ0xSqqT428d8qtuyryspqSm//YaejpQsnqV3drGLgbTMmy0yu9ZlSbgcdDeNkrD71HZ8pP9MDhbwniRa6VtCJH0ijrUq2GaNn/fTSWlJCderyROgJt3ZvejbQbqOvh7nu/JJxVB2/kUwPsufSG+z0AhcP5jYL9lui2BKJOxZuGP/Q4XKeWeGZKG6TaLoWTd5BWuVCy8p65bqxJpBLg4VZ0DYJyc91hGTMe4IgbXDtinql7MO3lLde9h1GKh/v4IBhRO3l+DEuX8rwBXW6t4UxAL9oRL+hTIoVo9mvoSZe2t6qg2SDtaFn+ebUIxAEc4ogWcUDDMMymh3kePy0OcwgjOv8WA/G7xwT2SfmuEdrag1MTfXGBe9Z9KiZrRWu/67mi5zW7VXJgOROF3GcKQGw/VdCg8A58l/kqZ+jPHoxhwo+bfKSEy+wEefqIT32jq4tRNO27T0nN3qVxSEoS//1IyZ3c/wFQSwMEFAAACAgAAAAh7KWgAHVtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPUMzTSUVBKL0osyCgGihiCOKWZKSB2tFKquUFqkrlRYpq5QaKhoWGybpJxirmJZZJxqqFRorGZeapSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAAAh7NqVRBpMAgAA2QQAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAAh7KWgAHVtAAAAeAAAAAkAJAAAAAAAAAAAAAAAmQIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABRAwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -3395,6 +3395,7 @@ GameObject:
   - component: {fileID: 1626627929}
   - component: {fileID: 1626627928}
   - component: {fileID: 1626627932}
+  - component: {fileID: 1626627933}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3425,7 +3426,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.33333334, g: 0.26666668, b: 0.24705884, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -3436,7 +3437,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 4.1796875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3447,7 +3448,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 0
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -3478,6 +3479,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1807548477}
   smoothing: 5
+--- !u!114 &1626627933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1626627927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0edaae697114bf844baaeaccb9f36ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pixelsPerUnit: 64
+  verticalUnitsOnScreen: 10
 --- !u!1 &1807548474
 GameObject:
   m_ObjectHideFlags: 0
