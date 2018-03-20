@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88317329916c0c147b31e097f1064ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RocketDeath: {fileID: 1838057152685986, guid: 87380dc3e4809d048a861e1740a09811,
+  RocketDeath: {fileID: 1596049407185226, guid: 577a20848ac1c8842b52594955a7f17a,
     type: 2}
 --- !u!212 &212820331189289986
 SpriteRenderer:
