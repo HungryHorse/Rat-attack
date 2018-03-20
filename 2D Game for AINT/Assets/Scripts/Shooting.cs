@@ -43,6 +43,7 @@ public class Shooting : MonoBehaviour {
             newBulletScript.lifeTime = currentWeapon.bulletLifeTime;
             newBulletScript.thisBullet = newBullet;
             newBulletScript.Made();
+            newBulletScript.damage = currentWeapon.damage;
             Rigidbody2D rigid = newBullet.GetComponent<Rigidbody2D>();
             rigid.AddForce(SpawnPoint.transform.up * currentWeapon.fireSpeed);
             currentWeapon.rechamberTimer = currentWeapon.fireRate;

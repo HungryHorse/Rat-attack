@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
 
     public bool sawPlayer;
+    public int health;
     public GameObject player;
     public GameObject playerDirectionMonitor;
     public float adjustmentAngle = 0.0f;
@@ -41,6 +42,12 @@ public class Enemy : MonoBehaviour
             playerDirectionMonitor.transform.rotation = newRotation;
 
             sendRay(playerDirectionMonitor);
+        }
+
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 
