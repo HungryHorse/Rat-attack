@@ -9,13 +9,14 @@ public class Mines : MonoBehaviour {
     {
         if (other.tag == "Enemy")
         {
+            SteppedOn();
             Destroy(gameObject);
         }
     }
     
-
-    void OnDestroy()
+    void SteppedOn()
     {
         Instantiate(MineDeath, gameObject.transform.position, gameObject.transform.rotation);
     }
+    
 }

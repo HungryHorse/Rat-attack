@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
 
         if (hit.collider != null)
         {
-            if (hit.collider.tag == "Player" && Vector3.Distance(player.transform.position, gameObject.transform.position) < 5)
+            if (hit.collider.tag == "Player" && Vector3.Distance(player.transform.position, gameObject.transform.position) < 15)
             {
                 sawPlayer = true;
             }

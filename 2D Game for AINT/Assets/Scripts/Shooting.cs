@@ -14,7 +14,7 @@ public class Shooting : MonoBehaviour {
     {
         GameObject Gun = GameObject.Find("Guns");
         Guns gunScript = Gun.GetComponent<Guns>();
-        GunChoice = 2;
+        GunChoice = 0;
         currentWeapon = new Weapons(gunScript.WeaponTypes[GunChoice]);
     }
 

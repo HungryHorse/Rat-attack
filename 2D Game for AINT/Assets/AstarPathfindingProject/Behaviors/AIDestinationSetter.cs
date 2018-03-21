@@ -48,7 +48,7 @@ namespace Pathfinding {
 		void Update () {
 
             //My stuff
-            if (Vector3.Distance(player.position, thisEnemy.position) < 5 && This.sawPlayer)
+            if (Vector3.Distance(player.position, thisEnemy.position) < 15 && This.sawPlayer)
             {
                 target = player;
             }
