@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public bool sawPlayer;
     public int health;
     public GameObject player;
+    PlayerStats playerStats;
     public GameObject playerDirectionMonitor;
     public float adjustmentAngle = 0.0f;
 
@@ -15,10 +16,13 @@ public class Enemy : MonoBehaviour
     {
         player = GameObject.Find("Player");
         playerDirectionMonitor = GameObject.Find("PlayerDirectionMonitor");
+        playerStats = player.GetComponent<PlayerStats>(); 
     }
 
     void Update()
     {
+        float distanceToPlayer = Vector3.Distance(player.transform.position, gameObject.transform.position);
+
         if (sawPlayer)
         {
             Vector3 target = player.transform.position;
@@ -44,6 +48,12 @@ public class Enemy : MonoBehaviour
             sendRay(playerDirectionMonitor);
         }
 
+
+        if (distanceToPlayer < 1 && playerStats.iFramesLeft <= 0)
+        {
+            playerStats.health -= 10;
+            playerStats.hit = true;
+        }
 
         if (health <= 0)
         {

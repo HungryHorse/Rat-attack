@@ -21,10 +21,4 @@ public class Movement : MonoBehaviour {
         rigidbody2D.velocity = new Vector2(x, y) * speed;
         rigidbody2D.angularVelocity = 0.0f;
     }
-
-
-    void UpdateStats()
-    {
-        speed = player.speed;
-    }
 }
