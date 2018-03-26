@@ -1,0 +1,250 @@
+fileFormatVersion: 2
+guid: 07498a1d283d6234f84f7c0d1bc04f71
+timeCreated: 1521991750
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Rat_Sheet_MK2_0
+    21300002: Rat_Sheet_MK2_1
+    21300004: Rat_Sheet_MK2_2
+    21300006: Rat_Sheet_MK2_3
+    21300008: Rat_Sheet_MK2_4
+    21300010: Rat_Sheet_MK2_5
+    21300012: Rat_Sheet_MK2_6
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Rat_Sheet_MK2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Rat_Sheet_MK2_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Rat_Sheet_MK2_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Rat_Sheet_MK2_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Rat_Sheet_MK2_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Rat_Sheet_MK2_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Rat_Sheet_MK2_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline:
+    - - {x: -39, y: -63}
+      - {x: -26, y: -63}
+      - {x: -12, y: -46}
+      - {x: -12, y: -20}
+      - {x: -25, y: -3}
+      - {x: -37, y: -3}
+      - {x: -52, y: -15}
+      - {x: -52, y: -34}
+    - - {x: -96, y: -60}
+      - {x: -84, y: -60}
+      - {x: -76, y: -54}
+      - {x: -76, y: -3}
+      - {x: -104, y: -3}
+      - {x: -116, y: -15}
+      - {x: -116, y: -37}
+    - - {x: 34, y: -3}
+      - {x: 26, y: -3}
+      - {x: 12, y: -16}
+      - {x: 12, y: -45}
+      - {x: 14, y: -58}
+      - {x: 17, y: -60}
+      - {x: 26, y: -60}
+      - {x: 32, y: -58}
+      - {x: 52, y: -36}
+      - {x: 52, y: -22}
+      - {x: 51, y: -16}
+    - - {x: -27, y: 24}
+      - {x: -32, y: 18}
+      - {x: -32, y: 11}
+      - {x: -29, y: 9}
+      - {x: -24, y: 9}
+      - {x: -21, y: 15}
+      - {x: -21, y: 22}
+      - {x: -23, y: 24}
+    - - {x: 85, y: 15}
+      - {x: 89, y: 9}
+      - {x: 93, y: 9}
+      - {x: 96, y: 10}
+      - {x: 96, y: 17}
+      - {x: 92, y: 24}
+      - {x: 88, y: 24}
+      - {x: 85, y: 23}
+    - - {x: -96, y: 50}
+      - {x: -100, y: 46}
+      - {x: -100, y: 40}
+      - {x: -97, y: 35}
+      - {x: -92, y: 35}
+      - {x: -88, y: 37}
+      - {x: -88, y: 43}
+      - {x: -91, y: 50}
+    - - {x: 24, y: 36}
+      - {x: 25, y: 35}
+      - {x: 31, y: 35}
+      - {x: 36, y: 37}
+      - {x: 36, y: 45}
+      - {x: 34, y: 50}
+      - {x: 27, y: 50}
+      - {x: 24, y: 43}
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
