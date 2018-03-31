@@ -11,11 +11,12 @@ public class Enemy : MonoBehaviour
     PlayerStats playerStats;
     public GameObject playerDirectionMonitor;
     public float adjustmentAngle = 0.0f;
+    public GameObject KnowledgeFragment;
 
     void Start()
     {
         player = GameObject.Find("Player");
-        playerDirectionMonitor = GameObject.Find("PlayerDirectionMonitor");
+        playerDirectionMonitor = gameObject.transform.GetChild(1).gameObject;
         playerStats = player.GetComponent<PlayerStats>(); 
     }
 
@@ -23,18 +24,7 @@ public class Enemy : MonoBehaviour
     {
         float distanceToPlayer = Vector3.Distance(player.transform.position, gameObject.transform.position);
 
-        if (sawPlayer)
-        {
-            Vector3 target = player.transform.position;
-            Vector3 difference = target - transform.position;
-
-            difference.Normalize();
-
-            float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-            Quaternion newRotation = Quaternion.Euler(new Vector3(0.0f, 0.0f, rotZ + adjustmentAngle));
-            transform.rotation = Quaternion.Lerp(gameObject.transform.rotation ,newRotation, Time.deltaTime * 5.0f);
-        }
-        else
+        if(!sawPlayer)
         {
             Vector3 target = player.transform.position;
             Vector3 difference = target - transform.position;
@@ -57,6 +47,7 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            Instantiate(KnowledgeFragment, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class PlayerStats : MonoBehaviour {
     public bool hit;
     public float iFrames;
     public float iFramesLeft;
+    public Image healthImage;
 
     private void Start()
     {
@@ -31,6 +33,11 @@ public class PlayerStats : MonoBehaviour {
         if (health <= 0)
         {
             Destroy(gameObject);
+        }
+
+        if(healthImage.fillAmount >= health / 100.0f)
+        {
+            healthImage.fillAmount -= (0.3f * Time.deltaTime);
         }
     }
 }
