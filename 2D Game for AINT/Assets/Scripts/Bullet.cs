@@ -16,7 +16,6 @@ public class Bullet : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D collision)
     {
         targetHit = collision.gameObject;
-        Debug.Log("HIT");
         Destroy(gameObject);
         if (targetHit.tag == "Enemy")
         {

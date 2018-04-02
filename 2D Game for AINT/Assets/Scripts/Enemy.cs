@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            Instantiate(KnowledgeFragment, transform.position, transform.rotation);
+            Instantiate(KnowledgeFragment, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
