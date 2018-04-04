@@ -25,6 +25,13 @@ public class MapManager : MonoBehaviour {
             UpdateMap();
             currentIndex += 1;
         }
+
+
+
+        if (Player == null)
+        {
+            EnemyArray.SetActive(false);
+        }
     }
 
     void UpdateMap()

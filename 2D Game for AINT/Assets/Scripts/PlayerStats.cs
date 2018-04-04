@@ -11,6 +11,8 @@ public class PlayerStats : MonoBehaviour {
     public float iFrames;
     public float iFramesLeft;
     public Image healthImage;
+    public Text KnowledgeText;
+    public GameObject GameOverScreen;
 
     private void Start()
     {
@@ -32,6 +34,8 @@ public class PlayerStats : MonoBehaviour {
 
         if (health <= 0)
         {
+            KnowledgeText.text = "Knowledge collected this run: " + Knowledge;
+            GameOverScreen.SetActive(true);
             Destroy(gameObject);
         }
 

@@ -200,11 +200,11 @@ MonoBehaviour:
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
-  slowdownDistance: 0
+  slowdownDistance: 1
   pickNextWaypointDist: 0.6
-  endReachedDistance: 0.3
+  endReachedDistance: 1
   alwaysDrawGizmos: 1
-  slowWhenNotFacingTarget: 1
+  slowWhenNotFacingTarget: 0
   whenCloseToDestination: 0
 --- !u!114 &114729598920563980
 MonoBehaviour:
