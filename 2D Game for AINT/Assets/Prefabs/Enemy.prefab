@@ -232,6 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb76936303114fd4a82324e445492ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stunRemaining: 0
   sawPlayer: 0
   health: 100
   player: {fileID: 0}

@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class Enemy : MonoBehaviour
 {
 
+    public float stunRemaining;
     public bool sawPlayer;
     public int health;
     public GameObject player;
@@ -49,6 +51,16 @@ public class Enemy : MonoBehaviour
         {
             Instantiate(KnowledgeFragment, transform.position, Quaternion.identity);
             Destroy(gameObject);
+        }
+
+        if (stunRemaining >= 0)
+        {
+            stunRemaining -= Time.deltaTime;
+            gameObject.GetComponent<AIPath>().canMove = false;
+        }
+        else
+        {
+            gameObject.GetComponent<AIPath>().canMove = true;
         }
     }
 
