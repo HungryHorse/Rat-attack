@@ -20,7 +20,7 @@ public class MapManager : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        if(EnemyArray == null || EnemyArray.transform.childCount == 0)
+        if((EnemyArray == null || EnemyArray.transform.childCount == 0) && Player != null)
         {
             UpdateMap();
             currentIndex += 1;
@@ -39,6 +39,11 @@ public class MapManager : MonoBehaviour {
         if (currentIndex != 0)
         {
             Destroy(newMap);
+        }
+        if (currentIndex > Maps.Length - 1)
+        {
+            Player.GetComponent<PlayerStats>().won = true;
+            Player.GetComponent<PlayerStats>().health = 0;
         }
 
         newMap = Instantiate(Maps[currentIndex], gameObject.transform.position, gameObject.transform.rotation);

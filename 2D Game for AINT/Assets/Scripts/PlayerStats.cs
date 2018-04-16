@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour {
 
     public int health;
+    public bool won;
     public float Knowledge;
     public bool hit;
     public float iFrames;
     public float iFramesLeft;
+    public GameObject win;
     public Image healthImage;
     public Text KnowledgeText;
     public GameObject GameOverScreen;
@@ -35,6 +37,10 @@ public class PlayerStats : MonoBehaviour {
         if (health <= 0)
         {
             KnowledgeText.text = "Knowledge collected this run: " + Knowledge;
+            if (won)
+            {
+                win.SetActive(true);
+            }
             GameOverScreen.SetActive(true);
             Destroy(gameObject);
         }
