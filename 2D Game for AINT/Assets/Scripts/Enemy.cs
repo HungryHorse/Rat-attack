@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
         }
 
 
-        if (distanceToPlayer < 1 && playerStats.iFramesLeft <= 0)
+        if (distanceToPlayer < 1 && playerStats.iFramesLeft <= 0 && !playerStats.shieldIsOn)
         {
             playerStats.health -= 10;
             playerStats.hit = true;
