@@ -13,13 +13,18 @@ public class Enemy : MonoBehaviour
     PlayerStats playerStats;
     public GameObject playerDirectionMonitor;
     public float adjustmentAngle = 0.0f;
+    public GameObject EnemyList;
     public GameObject KnowledgeFragment;
+    public GameObject Portal;
+    public MapManager mapManager;
 
     void Start()
     {
         player = GameObject.Find("Player");
+        mapManager = GameObject.Find("MapManager").GetComponent<MapManager>();
         playerDirectionMonitor = gameObject.transform.GetChild(1).gameObject;
-        playerStats = player.GetComponent<PlayerStats>(); 
+        playerStats = player.GetComponent<PlayerStats>();
+        EnemyList = gameObject.transform.parent.gameObject;
     }
 
     void Update()
@@ -49,7 +54,15 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            Instantiate(KnowledgeFragment, transform.position, Quaternion.identity);
+            if(EnemyList.transform.childCount == 1)
+            {
+                GameObject newPortal = Instantiate(Portal, transform.position, Quaternion.identity);
+                mapManager.Portal = newPortal;
+            }
+            else
+            {
+                Instantiate(KnowledgeFragment, transform.position, Quaternion.identity);
+            }
             Destroy(gameObject);
         }
 

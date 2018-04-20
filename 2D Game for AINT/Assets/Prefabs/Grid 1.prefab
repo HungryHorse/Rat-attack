@@ -2918,8 +2918,11 @@ MonoBehaviour:
   player: {fileID: 0}
   playerDirectionMonitor: {fileID: 0}
   adjustmentAngle: 270
+  EnemyList: {fileID: 0}
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
+  Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  mapManager: {fileID: 0}
 --- !u!114 &114103385843162308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2937,8 +2940,11 @@ MonoBehaviour:
   player: {fileID: 0}
   playerDirectionMonitor: {fileID: 0}
   adjustmentAngle: 270
+  EnemyList: {fileID: 0}
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
+  Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  mapManager: {fileID: 0}
 --- !u!114 &114119130276901734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2956,8 +2962,11 @@ MonoBehaviour:
   player: {fileID: 0}
   playerDirectionMonitor: {fileID: 0}
   adjustmentAngle: 270
+  EnemyList: {fileID: 0}
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
+  Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  mapManager: {fileID: 0}
 --- !u!114 &114175578795418402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3006,8 +3015,11 @@ MonoBehaviour:
   player: {fileID: 0}
   playerDirectionMonitor: {fileID: 0}
   adjustmentAngle: 270
+  EnemyList: {fileID: 0}
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
+  Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  mapManager: {fileID: 0}
 --- !u!114 &114244398534434432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3051,8 +3063,11 @@ MonoBehaviour:
   player: {fileID: 0}
   playerDirectionMonitor: {fileID: 0}
   adjustmentAngle: 270
+  EnemyList: {fileID: 0}
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
+  Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  mapManager: {fileID: 0}
 --- !u!114 &114267846266149546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3414,8 +3429,11 @@ MonoBehaviour:
   player: {fileID: 0}
   playerDirectionMonitor: {fileID: 0}
   adjustmentAngle: 270
+  EnemyList: {fileID: 0}
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
+  Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  mapManager: {fileID: 0}
 --- !u!114 &114460769885421084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3577,8 +3595,11 @@ MonoBehaviour:
   player: {fileID: 0}
   playerDirectionMonitor: {fileID: 0}
   adjustmentAngle: 270
+  EnemyList: {fileID: 0}
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
+  Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  mapManager: {fileID: 0}
 --- !u!114 &114568503087539430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3663,8 +3684,11 @@ MonoBehaviour:
   player: {fileID: 0}
   playerDirectionMonitor: {fileID: 0}
   adjustmentAngle: 270
+  EnemyList: {fileID: 0}
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
+  Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  mapManager: {fileID: 0}
 --- !u!114 &114601323607744836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3697,8 +3721,11 @@ MonoBehaviour:
   player: {fileID: 0}
   playerDirectionMonitor: {fileID: 0}
   adjustmentAngle: 270
+  EnemyList: {fileID: 0}
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
+  Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  mapManager: {fileID: 0}
 --- !u!114 &114673541589124996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3762,8 +3789,11 @@ MonoBehaviour:
   player: {fileID: 0}
   playerDirectionMonitor: {fileID: 0}
   adjustmentAngle: 270
+  EnemyList: {fileID: 0}
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
+  Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  mapManager: {fileID: 0}
 --- !u!114 &114684281522990418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3864,8 +3894,11 @@ MonoBehaviour:
   player: {fileID: 0}
   playerDirectionMonitor: {fileID: 0}
   adjustmentAngle: 270
+  EnemyList: {fileID: 0}
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
+  Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  mapManager: {fileID: 0}
 --- !u!114 &114766945942381736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3883,8 +3916,11 @@ MonoBehaviour:
   player: {fileID: 0}
   playerDirectionMonitor: {fileID: 0}
   adjustmentAngle: 270
+  EnemyList: {fileID: 0}
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
+  Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  mapManager: {fileID: 0}
 --- !u!114 &114785361051879054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3933,8 +3969,11 @@ MonoBehaviour:
   player: {fileID: 0}
   playerDirectionMonitor: {fileID: 0}
   adjustmentAngle: 270
+  EnemyList: {fileID: 0}
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
+  Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  mapManager: {fileID: 0}
 --- !u!114 &114798584172427182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3952,8 +3991,11 @@ MonoBehaviour:
   player: {fileID: 0}
   playerDirectionMonitor: {fileID: 0}
   adjustmentAngle: 270
+  EnemyList: {fileID: 0}
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
+  Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  mapManager: {fileID: 0}
 --- !u!114 &114805840617372144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3971,8 +4013,11 @@ MonoBehaviour:
   player: {fileID: 0}
   playerDirectionMonitor: {fileID: 0}
   adjustmentAngle: 270
+  EnemyList: {fileID: 0}
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
+  Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  mapManager: {fileID: 0}
 --- !u!114 &114854947864013058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4156,8 +4201,11 @@ MonoBehaviour:
   player: {fileID: 0}
   playerDirectionMonitor: {fileID: 0}
   adjustmentAngle: 270
+  EnemyList: {fileID: 0}
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
+  Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  mapManager: {fileID: 0}
 --- !u!114 &114916560498496386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4267,8 +4315,11 @@ MonoBehaviour:
   player: {fileID: 0}
   playerDirectionMonitor: {fileID: 0}
   adjustmentAngle: 270
+  EnemyList: {fileID: 0}
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
+  Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  mapManager: {fileID: 0}
 --- !u!114 &114985239112911652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4286,8 +4337,11 @@ MonoBehaviour:
   player: {fileID: 0}
   playerDirectionMonitor: {fileID: 0}
   adjustmentAngle: 270
+  EnemyList: {fileID: 0}
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
+  Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  mapManager: {fileID: 0}
 --- !u!114 &114993559618907336
 MonoBehaviour:
   m_ObjectHideFlags: 1

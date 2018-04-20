@@ -11,33 +11,31 @@ public class MapManager : MonoBehaviour {
     int currentIndex;
     public GameObject[] Maps;
     GameObject newMap;
+    public GameObject Portal;
 
     void Start()
     {
         currentIndex = 0;
+        UpdateMap();
     }
 
     // Update is called once per frame
-    void Update () {
-
-        if((EnemyArray == null || EnemyArray.transform.childCount == 0) && Player != null)
-        {
-            UpdateMap();
-            currentIndex += 1;
-        }
-
-
-
-        if (Player == null)
+    void Update () {        
+        if (Player == null && EnemyArray != null)
         {
             EnemyArray.SetActive(false);
         }
     }
 
-    void UpdateMap()
+    public void UpdateMap()
     {
         if (currentIndex != 0)
         {
+            GameObject[] knowledge = GameObject.FindGameObjectsWithTag("Knowledge");
+            foreach(GameObject element in knowledge)
+            {
+                Destroy(element);
+            }
             Destroy(newMap);
         }
         if (currentIndex > Maps.Length - 1)
@@ -55,5 +53,6 @@ public class MapManager : MonoBehaviour {
         Player.transform.position = Spawn.position;
         Player.transform.rotation = Quaternion.identity;
 
+        currentIndex++;
     }
 }

@@ -1050,6 +1050,7 @@ MonoBehaviour:
   Maps:
   - {fileID: 1516134791045632, guid: c0a05a8b85a082942bf042d22b613170, type: 2}
   - {fileID: 1744303033348020, guid: 7216149882212f048bb66468de086542, type: 2}
+  Portal: {fileID: 0}
 --- !u!4 &581105744
 Transform:
   m_ObjectHideFlags: 0
@@ -3131,7 +3132,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.5
+  orthographic size: 5.3984375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

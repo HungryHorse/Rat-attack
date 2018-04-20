@@ -238,8 +238,11 @@ MonoBehaviour:
   player: {fileID: 0}
   playerDirectionMonitor: {fileID: 0}
   adjustmentAngle: 270
+  EnemyList: {fileID: 0}
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
+  Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  mapManager: {fileID: 0}
 --- !u!212 &212939944745965760
 SpriteRenderer:
   m_ObjectHideFlags: 1
