@@ -8,9 +8,11 @@ public class MapManager : MonoBehaviour {
     public Transform Spawn;
     GameObject EnemyArray;
     GameObject MapToDestroy;
+    public GameObject mapHolder;
     int currentIndex;
-    public GameObject[] Maps;
+    public int numberOfLevels;
     GameObject newMap;
+    public GenerateRandomLevel randLevelGen;
     public GameObject Portal;
 
     void Start()
@@ -21,9 +23,9 @@ public class MapManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {        
-        if (Player == null && EnemyArray != null)
+        if (Player == null)
         {
-            EnemyArray.SetActive(false);
+            Destroy(newMap);
         }
     }
 
@@ -38,15 +40,15 @@ public class MapManager : MonoBehaviour {
             }
             Destroy(newMap);
         }
-        if (currentIndex > Maps.Length - 1)
+        if (currentIndex == numberOfLevels)
         {
             Player.GetComponent<PlayerStats>().won = true;
             Player.GetComponent<PlayerStats>().health = 0;
         }
 
-        newMap = Instantiate(Maps[currentIndex], gameObject.transform.position, gameObject.transform.rotation);
+        newMap = Instantiate(mapHolder, new Vector3(0,0,0), Quaternion.identity);
 
-        EnemyArray = newMap.transform.GetChild(3).gameObject;
+        randLevelGen.GenNewLevel(currentIndex, newMap);
 
         AstarPath.active.Scan();
 

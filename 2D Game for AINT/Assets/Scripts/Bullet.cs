@@ -12,11 +12,13 @@ public class Bullet : MonoBehaviour {
     {
         Destroy(thisBullet, lifeTime);
     }
-
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         targetHit = collision.gameObject;
-        Destroy(gameObject);
+        if (targetHit.tag != "Bullet")
+        {
+            Destroy(gameObject);
+        }
         if (targetHit.tag == "Enemy")
         {
             targetHit.GetComponent<Enemy>().health -= damage;
