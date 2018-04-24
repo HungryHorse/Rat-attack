@@ -43,7 +43,8 @@ public class GenerateRandomLevel : MonoBehaviour {
             {
                 direction = rand.Next(1, 5);
                 dirList.Add(direction);
-                currentRoomObject = Instantiate(rooms[0].levelObject, new Vector3(0, 0, 0), Quaternion.identity);
+                currRoom = rooms[0];
+                currentRoomObject = Instantiate(currRoom.levelObject, new Vector3(0, 0, 0), Quaternion.identity);
                 currentRoomObject.transform.GetChild(direction).gameObject.SetActive(false);
             }
             else
@@ -72,22 +73,22 @@ public class GenerateRandomLevel : MonoBehaviour {
                 if (prevDirection == 3)
                 {
                     amountX = -((prevRoom.width) / 2f) - 3f - ((currRoom.width) / 2f);
-                    currCorridor = Instantiate(corridorX, new Vector3(currX + (amountX / 2f), currY, 0), Quaternion.Euler(new Vector3(0, 0, 90)));
+                    currCorridor = Instantiate(corridorX, new Vector3(currX - (prevRoom.width/ 2 + 1.5f), currY, 0), Quaternion.Euler(new Vector3(0, 0, 90)));
                 }
                 if (prevDirection == 4)
                 {
                     amountY = ((prevRoom.height) / 2f) + 3f + ((currRoom.height) / 2f);
-                    currCorridor = Instantiate(corridorY, new Vector3(currX, currY + (amountY / 2f), 0), Quaternion.identity);
+                    currCorridor = Instantiate(corridorY, new Vector3(currX, currY + (prevRoom.height/ 2 + 1.5f), 0), Quaternion.identity);
                 }
                 if (prevDirection == 1)
                 {
                     amountX = ((prevRoom.width) / 2f) + 3f + ((currRoom.width) / 2f);
-                    currCorridor = Instantiate(corridorX, new Vector3(currX + (amountX / 2f), currY, 0), Quaternion.Euler(new Vector3(0, 0, 90)));
+                    currCorridor = Instantiate(corridorX, new Vector3(currX + (prevRoom.width/2 + 1.5f), currY, 0), Quaternion.Euler(new Vector3(0, 0, 90)));
                 }
                 if (prevDirection == 2)
                 {
                     amountY = -((prevRoom.height) / 2f) - 3f - ((currRoom.height) / 2f);
-                    currCorridor = Instantiate(corridorY, new Vector3(currX, currY + (amountY / 2f), 0), Quaternion.identity);
+                    currCorridor = Instantiate(corridorY, new Vector3(currX, currY - (prevRoom.height/ 2 + 1.5f), 0), Quaternion.identity);
                 }
 
                 currX += amountX;
