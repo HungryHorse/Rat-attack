@@ -37,13 +37,13 @@ public class GenerateRandomLevel : MonoBehaviour {
                 prevRoom = currRoom;
             }
 
-            currRoom = rooms[rand.Next(0, rooms.Length)];
+            currRoom = rooms[rand.Next(1, rooms.Length)];
 
             if(currentRoomInt == 0)
             {
                 direction = rand.Next(1, 5);
                 dirList.Add(direction);
-                currentRoomObject = Instantiate(currRoom.levelObject, new Vector3(0, 0, 0), Quaternion.identity);
+                currentRoomObject = Instantiate(rooms[0].levelObject, new Vector3(0, 0, 0), Quaternion.identity);
                 currentRoomObject.transform.GetChild(direction).gameObject.SetActive(false);
             }
             else

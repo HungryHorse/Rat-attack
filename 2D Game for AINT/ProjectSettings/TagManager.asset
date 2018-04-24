@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,9 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 1832138697
+    locked: 0
+  - name: Wall
+    uniqueID: 1879930885
     locked: 0
   - name: Player
     uniqueID: 1746722233
