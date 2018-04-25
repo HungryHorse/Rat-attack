@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour {
     public float shieldTime;
     float currentShieldTime;
     public GameObject shield;
+    public int isTutorial;
 
     public Image CooldownImage;
     public Text cooldownText;
@@ -31,45 +32,70 @@ public class PlayerStats : MonoBehaviour {
 
     private void Start()
     {
+        isTutorial = PlayerPrefs.GetInt("Tutorial");
+
         iFramesLeft = 0;
 
-        int chosenUpgrade = PlayerPrefs.GetInt("ActiveUpgrade");
+        if (isTutorial != 1)
+        {
+            int chosenUpgrade = PlayerPrefs.GetInt("ActiveUpgrade");
 
-        if (chosenUpgrade == 1)
-        {
-            shieldEnabled = true;
-        }
-        else
-        {
-            shieldEnabled = false;
-        }
+            if (chosenUpgrade == 1)
+            {
+                EnableDisableShield(true);
+            }
+            else
+            {
+                EnableDisableShield(false);
+            }
 
-        if (chosenUpgrade == 2)
-        {
-            gameObject.GetComponent<StunBomb>().enabled = true;
-        }
-        else
-        {
-            gameObject.GetComponent<StunBomb>().enabled = false;
-        }
+            if (chosenUpgrade == 2)
+            {
+                EnableDisableStunBomb(true);
+            }
+            else
+            {
+                EnableDisableStunBomb(false);
+            }
 
-        if (chosenUpgrade == 3)
-        {
-            gameObject.GetComponent<Movement>().DashEnabled = true;
-        }
-        else
-        {
-            gameObject.GetComponent<Movement>().DashEnabled = false;
-        }
+            if (chosenUpgrade == 3)
+            {
+                EnableDisableDash(true);
+            }
+            else
+            {
+                EnableDisableDash(false);
+            }
 
-        if (chosenUpgrade == 4)
-        {
-            gameObject.GetComponent<MinePooper>().enabled = true;
+            if (chosenUpgrade == 4)
+            {
+                EnableDisableMinePooper(true);
+            }
+            else
+            {
+                EnableDisableMinePooper(false);
+            }
         }
-        else
-        {
-            gameObject.GetComponent<MinePooper>().enabled = false;
-        }
+    }
+
+    public void EnableDisableShield(bool setValue)
+    {
+        shieldEnabled = setValue;
+    }
+
+    public void EnableDisableStunBomb(bool setValue)
+    {
+        gameObject.GetComponent<StunBomb>().enabled = setValue;
+    }
+
+    public void EnableDisableDash(bool setValue)
+    {
+        gameObject.GetComponent<Movement>().DashEnabled = setValue;
+    }
+
+    public void EnableDisableMinePooper(bool setValue)
+    {
+        gameObject.GetComponent<MinePooper>().enabled = setValue;
     }
 
     private void Update()

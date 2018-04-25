@@ -1070,12 +1070,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b59e9c38f80fd3841b67a3b79509ae77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTutorial: 0
   Player: {fileID: 1807548474}
   Spawn: {fileID: 227930901}
   mapHolder: {fileID: 1812183344278014, guid: 38fbf296e6be92d438c8bf29b21284ef, type: 2}
   numberOfLevels: 2
   randLevelGen: {fileID: 581105745}
   Portal: {fileID: 0}
+  Tutorial: {fileID: 0}
 --- !u!4 &581105744
 Transform:
   m_ObjectHideFlags: 0
@@ -1901,6 +1903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec318989075c5b448b35d8d7bfc01a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTutorial: 0
   GunChoice: 0
   SpawnPoint: {fileID: 902404635}
   FireSide: Fire1
@@ -3276,7 +3279,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.5
+  orthographic size: 3.828125
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3884,6 +3887,7 @@ MonoBehaviour:
   shieldIsOn: 0
   shieldTime: 3.5
   shield: {fileID: 415331672}
+  isTutorial: 0
   CooldownImage: {fileID: 1732034130}
   cooldownText: {fileID: 960984392}
   cooldown: 10
@@ -4082,6 +4086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec318989075c5b448b35d8d7bfc01a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTutorial: 0
   GunChoice: 1
   SpawnPoint: {fileID: 2005299321}
   FireSide: Fire2

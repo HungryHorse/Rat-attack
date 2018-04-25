@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MapManager : MonoBehaviour {
 
+    public int isTutorial;
     public GameObject Player;
     public Transform Spawn;
     GameObject EnemyArray;
@@ -14,11 +15,20 @@ public class MapManager : MonoBehaviour {
     GameObject newMap;
     public GenerateRandomLevel randLevelGen;
     public GameObject Portal;
+    public GameObject Tutorial;
 
     void Start()
     {
+        isTutorial = PlayerPrefs.GetInt("Tutorial");
         currentIndex = 0;
-        UpdateMap();
+        if (isTutorial == 1)
+        {
+            LoadTutorial();
+        }
+        else
+        {
+            UpdateMap();
+        }
     }
 
     // Update is called once per frame
@@ -27,6 +37,11 @@ public class MapManager : MonoBehaviour {
         {
             Destroy(newMap);
         }
+    }
+
+    public void LoadTutorial()
+    {
+        Instantiate(Tutorial, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
     public void UpdateMap()

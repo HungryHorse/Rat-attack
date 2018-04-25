@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour {
 
     float rechamberRate = 5f;
+    public int isTutorial;
     public int GunChoice;
     Weapons currentWeapon;
     public GameObject SpawnPoint;
@@ -15,11 +16,20 @@ public class Shooting : MonoBehaviour {
     {
         GameObject Gun = GameObject.Find("Guns");
         Guns gunScript = Gun.GetComponent<Guns>();
+
+        isTutorial = PlayerPrefs.GetInt("Tutorial");
+        
         currentWeapon = new Weapons(gunScript.WeaponTypes[GunChoice]);
         
         rots[0] = new Vector3(0, 0, 0);
         rots[1] = new Vector3(0, 0, 8);
         rots[2] = new Vector3(0, 0, -8);
+
+        if (isTutorial == 1)
+        {
+            GunChoice = 0;
+            this.enabled = false;
+        }
     }
 
 

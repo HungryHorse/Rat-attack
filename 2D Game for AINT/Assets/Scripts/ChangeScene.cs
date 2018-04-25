@@ -21,9 +21,14 @@ public class ChangeScene : MonoBehaviour {
             WarningMessage.SetActive(true);
         }
         else
-            SceneManager.LoadScene(scene);
         {
+            SceneManager.LoadScene(scene);
         }
+    }
+
+    public void SetTutorial(int tutorial)
+    {
+        PlayerPrefs.SetInt("Tutorial", tutorial);
     }
 
     public void NoUps(int yesNo)
