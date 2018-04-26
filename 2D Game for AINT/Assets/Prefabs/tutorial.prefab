@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 8195094279685007182}
   - component: {fileID: 3664157344448256828}
   - component: {fileID: 2113883506632009052}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1902637879254356}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 4.69, z: 0}
+  m_LocalPosition: {x: 0.5, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4508733854458860}
@@ -782,6 +782,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stunRemaining: 0
+  isTutorial: 0
+  isLast: 0
   sawPlayer: 0
   health: 100
   player: {fileID: 0}
@@ -791,6 +793,8 @@ MonoBehaviour:
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
   Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  TutorialPortal: {fileID: 1959058101453040, guid: 2442e17cf2b360749ab0790e8fe3d9d0,
+    type: 2}
   mapManager: {fileID: 0}
 --- !u!114 &114466181242955526
 MonoBehaviour:
@@ -872,6 +876,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stunRemaining: 0
+  isTutorial: 0
+  isLast: 0
   sawPlayer: 0
   health: 100
   player: {fileID: 0}
@@ -881,6 +887,8 @@ MonoBehaviour:
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
   Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  TutorialPortal: {fileID: 1959058101453040, guid: 2442e17cf2b360749ab0790e8fe3d9d0,
+    type: 2}
   mapManager: {fileID: 0}
 --- !u!212 &212044309590449826
 SpriteRenderer:
@@ -1133,8 +1141,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1879930885
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8fbc54b8dcfa1854bb5cb5860e98164e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

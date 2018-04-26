@@ -233,6 +233,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stunRemaining: 0
+  isTutorial: 0
+  isLast: 0
   sawPlayer: 0
   health: 100
   player: {fileID: 0}
@@ -242,6 +244,8 @@ MonoBehaviour:
   KnowledgeFragment: {fileID: 1076058436847694, guid: c70a4cd4fd6be0d428066a0d17f401bb,
     type: 2}
   Portal: {fileID: 1477028240333820, guid: 088fcf744b9d2eb439a552266d8da51a, type: 2}
+  TutorialPortal: {fileID: 1959058101453040, guid: 2442e17cf2b360749ab0790e8fe3d9d0,
+    type: 2}
   mapManager: {fileID: 0}
 --- !u!212 &212939944745965760
 SpriteRenderer:
@@ -275,7 +279,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -289778277
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 14198b0f5d50c7342ba6cac281690bae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

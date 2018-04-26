@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
 {
 
     public float stunRemaining;
+    public bool isTutorial;
+    public bool isLast;
     public bool sawPlayer;
     public int health;
     public GameObject player;
@@ -16,6 +18,7 @@ public class Enemy : MonoBehaviour
     public GameObject EnemyList;
     public GameObject KnowledgeFragment;
     public GameObject Portal;
+    public GameObject TutorialPortal;
     public MapManager mapManager;
 
     void Start()
@@ -54,12 +57,19 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            if(EnemyList.transform.childCount == 1)
+            if (isLast && isTutorial)
+            {
+                GameObject newPortal = Instantiate(TutorialPortal, transform.position, Quaternion.identity);
+                mapManager.TutorialPortal = newPortal;
+            }
+
+            if (isLast && !isTutorial)
             {
                 GameObject newPortal = Instantiate(Portal, transform.position, Quaternion.identity);
                 mapManager.Portal = newPortal;
             }
-            else
+
+            if(!isLast)
             {
                 Instantiate(KnowledgeFragment, transform.position, Quaternion.identity);
             }
@@ -87,6 +97,20 @@ public class Enemy : MonoBehaviour
             {
                 sawPlayer = true;
             }
+        }
+    }
+
+
+    public void YouArelastEnemy(int istutorial)
+    {
+        isLast = true;
+        if(istutorial == 1)
+        {
+            isTutorial = true;
+        }
+        else
+        {
+            isTutorial = false;
         }
     }
 }

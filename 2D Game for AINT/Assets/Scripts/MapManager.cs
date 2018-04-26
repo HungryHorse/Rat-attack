@@ -7,14 +7,14 @@ public class MapManager : MonoBehaviour {
     public int isTutorial;
     public GameObject Player;
     public Transform Spawn;
-    GameObject EnemyArray;
-    GameObject MapToDestroy;
+    GameObject[] EnemyArray;
     public GameObject mapHolder;
     int currentIndex;
     public int numberOfLevels;
     GameObject newMap;
     public GenerateRandomLevel randLevelGen;
     public GameObject Portal;
+    public GameObject TutorialPortal;
     public GameObject Tutorial;
 
     void Start()
@@ -37,11 +37,25 @@ public class MapManager : MonoBehaviour {
         {
             Destroy(newMap);
         }
+
+        try
+        {
+            if (EnemyArray[1] == null && EnemyArray[0] != null)
+            {
+                EnemyArray[0].GetComponent<Enemy>().YouArelastEnemy(isTutorial);
+            }
+        }
+        catch
+        {
+
+        }
     }
 
     public void LoadTutorial()
     {
         Instantiate(Tutorial, new Vector3(0, 0, 0), Quaternion.identity);
+        EnemyArray = GameObject.FindGameObjectsWithTag("Enemy");
+        AstarPath.active.Scan();
     }
 
     public void UpdateMap()
@@ -69,6 +83,8 @@ public class MapManager : MonoBehaviour {
 
         Player.transform.position = Spawn.position;
         Player.transform.rotation = Quaternion.identity;
+
+        EnemyArray = GameObject.FindGameObjectsWithTag("Enemy");
 
         currentIndex++;
     }

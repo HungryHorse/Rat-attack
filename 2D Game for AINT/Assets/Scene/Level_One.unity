@@ -1077,6 +1077,7 @@ MonoBehaviour:
   numberOfLevels: 2
   randLevelGen: {fileID: 581105745}
   Portal: {fileID: 0}
+  TutorialPortal: {fileID: 0}
   Tutorial: {fileID: 1229584107524474, guid: 676874c3d395ea74aa6a8d83cac70a22, type: 2}
 --- !u!4 &581105744
 Transform:
@@ -2766,48 +2767,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1001 &1495786631
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4508733854458860, guid: 676874c3d395ea74aa6a8d83cac70a22, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4508733854458860, guid: 676874c3d395ea74aa6a8d83cac70a22, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4508733854458860, guid: 676874c3d395ea74aa6a8d83cac70a22, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4508733854458860, guid: 676874c3d395ea74aa6a8d83cac70a22, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4508733854458860, guid: 676874c3d395ea74aa6a8d83cac70a22, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4508733854458860, guid: 676874c3d395ea74aa6a8d83cac70a22, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4508733854458860, guid: 676874c3d395ea74aa6a8d83cac70a22, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4508733854458860, guid: 676874c3d395ea74aa6a8d83cac70a22, type: 2}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 676874c3d395ea74aa6a8d83cac70a22, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1523352572
 GameObject:
   m_ObjectHideFlags: 0
@@ -3322,7 +3281,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.515625
+  orthographic size: 4.734375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
