@@ -11,7 +11,8 @@ public class EnableShoot : MonoBehaviour {
             Shooting[] guns = collision.gameObject.GetComponents<Shooting>();
             foreach(Shooting i in guns)
             {
-                i.enabled = true;
+                Debug.Log("Got to canShooot");
+                i.canShoot = true;
             }
         }
     }

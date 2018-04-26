@@ -76,6 +76,13 @@ public class PlayerStats : MonoBehaviour {
                 EnableDisableMinePooper(false);
             }
         }
+        else
+        {
+            EnableDisableMinePooper(false);
+            EnableDisableDash(false);
+            EnableDisableStunBomb(false);
+            EnableDisableShield(false);
+        }
     }
 
     public void EnableDisableShield(bool setValue)

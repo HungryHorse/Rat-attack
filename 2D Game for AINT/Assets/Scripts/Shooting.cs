@@ -7,6 +7,7 @@ public class Shooting : MonoBehaviour {
     float rechamberRate = 5f;
     public int isTutorial;
     public int GunChoice;
+    public bool canShoot = true;
     Weapons currentWeapon;
     public GameObject SpawnPoint;
     public string FireSide;
@@ -18,25 +19,27 @@ public class Shooting : MonoBehaviour {
         Guns gunScript = Gun.GetComponent<Guns>();
 
         isTutorial = PlayerPrefs.GetInt("Tutorial");
-        
+
+
+        if (isTutorial == 1)
+        {
+            GunChoice = 0;
+            canShoot = false;
+        }
+
         currentWeapon = new Weapons(gunScript.WeaponTypes[GunChoice]);
         
         rots[0] = new Vector3(0, 0, 0);
         rots[1] = new Vector3(0, 0, 8);
         rots[2] = new Vector3(0, 0, -8);
 
-        if (isTutorial == 1)
-        {
-            GunChoice = 0;
-            this.enabled = false;
-        }
     }
 
 
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetButton(FireSide))
+        if (Input.GetButton(FireSide) && canShoot)
         {
             Fire();
         }
