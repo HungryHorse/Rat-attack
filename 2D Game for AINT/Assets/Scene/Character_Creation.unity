@@ -919,10 +919,10 @@ RectTransform:
   m_Father: {fileID: 1737635472}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.111250006, y: 0.32652244}
+  m_AnchorMin: {x: 0.1175, y: 0.32652244}
   m_AnchorMax: {x: 0.335, y: 0.7327555}
-  m_AnchoredPosition: {x: 2.5, y: -1.5000029}
-  m_SizeDelta: {x: -5.700001, y: 0.48400116}
+  m_AnchoredPosition: {x: 0.4104004, y: -1.1401844}
+  m_SizeDelta: {x: 0.12080002, y: 1.2036}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &268707274
 MonoBehaviour:
@@ -3708,7 +3708,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.3984375
+  orthographic size: 7.1015625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4456,8 +4456,10 @@ MonoBehaviour:
   currImageLeft: {fileID: 268707274}
   currImageRight: {fileID: 918773941}
   WeaponImages:
-  - {fileID: 21300000, guid: a337139b457f4494ab7674e15974d6c1, type: 3}
-  - {fileID: 21300000, guid: ff5651c054aaa7344b8a36f6cf44b940, type: 3}
+  - {fileID: 21300000, guid: 2e482579e7bb97043b809d55c45b611c, type: 3}
+  - {fileID: 21300000, guid: 1a4a5fab448c54f4485d628a474c67f3, type: 3}
+  - {fileID: 21300000, guid: d2668e568a638a345a1903ed2f8977b9, type: 3}
+  - {fileID: 21300000, guid: 031365fa37f6d454787ca6ac6cbffb65, type: 3}
   currentIndexLeft: 0
   currentIndexRight: 0
 --- !u!1 &2034832550
