@@ -26,6 +26,10 @@ public class Shooting : MonoBehaviour {
             GunChoice = 0;
             canShoot = false;
         }
+        else
+        {
+            GunChoice = PlayerPrefs.GetInt(FireSide);
+        }
 
         currentWeapon = new Weapons(gunScript.WeaponTypes[GunChoice]);
         

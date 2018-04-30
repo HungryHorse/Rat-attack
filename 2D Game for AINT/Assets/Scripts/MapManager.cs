@@ -38,9 +38,10 @@ public class MapManager : MonoBehaviour {
             Destroy(newMap);
         }
 
+        EnemyArray = GameObject.FindGameObjectsWithTag("Enemy");
         try
         {
-            if (EnemyArray[1] == null && EnemyArray[0] != null)
+            if (EnemyArray.Length == 1)
             {
                 EnemyArray[0].GetComponent<Enemy>().YouArelastEnemy(isTutorial);
             }
@@ -53,7 +54,7 @@ public class MapManager : MonoBehaviour {
 
     public void LoadTutorial()
     {
-        Instantiate(Tutorial, new Vector3(0, 0, 0), Quaternion.identity);
+        Instantiate(Tutorial, new Vector3(-0.5f, -0.5f, 0), Quaternion.identity);
         EnemyArray = GameObject.FindGameObjectsWithTag("Enemy");
         AstarPath.active.Scan();
     }
