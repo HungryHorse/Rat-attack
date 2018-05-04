@@ -5,9 +5,15 @@ using UnityEngine;
 
 public class ChangeScene : MonoBehaviour {
     public GameObject WarningMessage;
+    public GameObject AudioManager;
+    AudioSource audio;
+    int sceneTochangeTo;
+    bool fadeOut = false;
 
     private void Start()
     {
+        AudioManager = GameObject.Find("BackgroundMusic");
+        audio = AudioManager.GetComponent<AudioSource>();
         if (!PlayerPrefs.HasKey("ActiveUpgrade"))
         {
             PlayerPrefs.SetInt("ActiveUpgrade", 0);
@@ -16,19 +22,26 @@ public class ChangeScene : MonoBehaviour {
 
     public void OnButton(int scene)
     {
-        if (scene == 1 && PlayerPrefs.GetInt("ActiveUpgrade") == 0)
+        fadeOut = true;
+        sceneTochangeTo = scene;
+    }
+
+    public void SetTutorial(int tutorial)
+    {
+        fadeOut = true;
+        PlayerPrefs.SetInt("Tutorial", tutorial);
+    }
+
+    public void SceneChange()
+    {
+        if (sceneTochangeTo == 1 && PlayerPrefs.GetInt("ActiveUpgrade") == 0)
         {
             WarningMessage.SetActive(true);
         }
         else
         {
-            SceneManager.LoadScene(scene);
+            SceneManager.LoadScene(sceneTochangeTo);
         }
-    }
-
-    public void SetTutorial(int tutorial)
-    {
-        PlayerPrefs.SetInt("Tutorial", tutorial);
     }
 
     public void NoUps(int yesNo)
@@ -40,6 +53,18 @@ public class ChangeScene : MonoBehaviour {
         else
         {
             WarningMessage.SetActive(false);
+        }
+    }
+
+    void Update()
+    {
+        if(fadeOut == true)
+        {
+            audio.volume -= Time.deltaTime;
+        }
+        if(audio.volume <= 0)
+        {
+            SceneChange();
         }
     }
 
