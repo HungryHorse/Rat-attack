@@ -10,6 +10,9 @@ public class MinePooper : MonoBehaviour {
     public Image CooldownImage;
     public Text cooldownText;
     public float cooldown;
+    public float damage;
+    public int extraCharges;
+    public float maxRadius;
     public GameObject cooldownObject;
     float currentCooldownTime;
 
@@ -26,8 +29,20 @@ public class MinePooper : MonoBehaviour {
         {
             cooldownObject.SetActive(true);
             CooldownImage.fillAmount = 1;
-            Instantiate(Mine, gameObject.transform.position, gameObject.transform.rotation);
+            GameObject newMine = Instantiate(Mine, gameObject.transform.position, gameObject.transform.rotation);
+            newMine.GetComponent<Mines>().damage = damage;
+            newMine.GetComponent<Mines>().maxRadius = maxRadius;
             currentCooldownTime = cooldown;
+        }
+        else
+        {
+            if(Input.GetButtonDown("Jump") && extraCharges > 0)
+            {
+                extraCharges--;
+                GameObject newMine = Instantiate(Mine, gameObject.transform.position, gameObject.transform.rotation);
+                newMine.GetComponent<Mines>().damage = damage;
+                newMine.GetComponent<Mines>().maxRadius = maxRadius;
+            }
         }
 
         if (currentCooldownTime >= 0)
@@ -42,4 +57,76 @@ public class MinePooper : MonoBehaviour {
             cooldownText.text = "";
         }
 	}
+
+    void DamageIncrease(int level)
+    {
+        switch (level)
+        {
+            case (1):
+                damage += (damage * 0.05f);
+                break;
+            case (2):
+                damage += (damage * 0.1f);
+                break;
+            case (3):
+                damage += (damage * 0.15f);
+                break;
+            case (4):
+                damage += (damage * 0.2f);
+                break;
+            case (5):
+                damage += (damage * 0.25f);
+                break;
+            default:
+                break;
+        }
+    }
+
+    void RadiusIncrease(int level)
+    {
+        switch (level)
+        {
+            case (1):
+                maxRadius += (maxRadius * 0.05f);
+                break;
+            case (2):
+                maxRadius += (maxRadius * 0.1f);
+                break;
+            case (3):
+                maxRadius += (maxRadius * 0.15f);
+                break;
+            case (4):
+                maxRadius += (maxRadius * 0.2f);
+                break;
+            case (5):
+                maxRadius += (maxRadius * 0.25f);
+                break;
+            default:
+                break;
+        }
+    }
+
+    void CoolDownReduc(int level)
+    {
+        switch (level)
+        {
+            case (1):
+                cooldown -= (cooldown * 0.05f);
+                break;
+            case (2):
+                cooldown -= (cooldown * 0.1f);
+                break;
+            case (3):
+                cooldown -= (cooldown * 0.15f);
+                break;
+            case (4):
+                cooldown -= (cooldown * 0.2f);
+                break;
+            case (5):
+                cooldown -= (cooldown * 0.25f);
+                break;
+            default:
+                break;
+        }
+    }
 }

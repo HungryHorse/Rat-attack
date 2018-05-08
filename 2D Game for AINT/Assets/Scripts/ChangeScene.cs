@@ -7,6 +7,7 @@ public class ChangeScene : MonoBehaviour {
     public GameObject WarningMessage;
     public GameObject AudioManager;
     AudioSource audio;
+    public AudioController audioControl;
     int sceneTochangeTo;
     bool fadeOut = false;
 
@@ -56,15 +57,20 @@ public class ChangeScene : MonoBehaviour {
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if(fadeOut == true)
         {
-            audio.volume -= Time.deltaTime;
+            audioControl.stopFadeIn = true;
+            audio.volume -= 1;
         }
         if(audio.volume <= 0)
         {
             SceneChange();
+        }
+        if(SceneManager.GetActiveScene().buildIndex != 1)
+        {
+            Cursor.visible = true;
         }
     }
 

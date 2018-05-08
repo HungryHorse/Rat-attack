@@ -11,8 +11,10 @@ public class StunBomb : MonoBehaviour {
     public Image CooldownImage;
     public Text cooldownText;
     public float cooldown;
+    public bool doesDamage;
     public int rateOfIncrease;
     public float stunTime;
+    public float maxRadius;
     public GameObject cooldownObject;
     float currentCooldownTime;
 
@@ -47,6 +49,78 @@ public class StunBomb : MonoBehaviour {
         }
     }
 
+    void TimeIncrease(int level)
+    {
+        switch (level)
+        {
+            case (1):
+                stunTime += (stunTime * 0.05f);
+                break;
+            case (2):
+                stunTime += (stunTime * 0.1f);
+                break;
+            case (3):
+                stunTime += (stunTime * 0.15f);
+                break;
+            case (4):
+                stunTime += (stunTime * 0.2f);
+                break;
+            case (5):
+                stunTime += (stunTime * 0.25f);
+                break;
+            default:
+                break;
+        }
+    }
+
+    void CoolDownReduc(int level)
+    {
+        switch (level)
+        {
+            case (1):
+                cooldown -= (cooldown * 0.05f);
+                break;
+            case (2):
+                cooldown -= (cooldown * 0.1f);
+                break;
+            case (3):
+                cooldown -= (cooldown * 0.15f);
+                break;
+            case (4):
+                cooldown -= (cooldown * 0.2f);
+                break;
+            case (5):
+                cooldown -= (cooldown * 0.25f);
+                break;
+            default:
+                break;
+        }
+    }
+
+    void RadiusIncrease(int level)
+    {
+        switch (level)
+        {
+            case (1):
+                maxRadius += (maxRadius * 0.05f);
+                break;
+            case (2):
+                maxRadius += (maxRadius * 0.1f);
+                break;
+            case (3):
+                maxRadius += (maxRadius * 0.15f);
+                break;
+            case (4):
+                maxRadius += (maxRadius * 0.2f);
+                break;
+            case (5):
+                maxRadius += (maxRadius * 0.25f);
+                break;
+            default:
+                break;
+        }
+    }
+
     void FixedUpdate()
     {
         if (Used)
@@ -54,7 +128,7 @@ public class StunBomb : MonoBehaviour {
             thisCollider.radius += (rateOfIncrease * 0.01f);
         }
         
-        if (thisCollider.radius >= 3)
+        if (thisCollider.radius >= maxRadius)
         {
             Used = false;
             thisCollider.radius = 0.001f;

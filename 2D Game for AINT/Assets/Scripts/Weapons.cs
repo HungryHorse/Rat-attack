@@ -11,7 +11,7 @@ public class Weapons{
     public int fireSpeed;
     public float bulletLifeTime;
     public float fireRate; //If using a beam will be how long inbetween damage ticks
-    public int damage;
+    public float damage;
     public float rechamberTimer;
     public int type; // 0-Bullets, 1-Shotgun, 2-Laser (TODO: add more)
 

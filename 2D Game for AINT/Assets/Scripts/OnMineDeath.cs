@@ -7,6 +7,8 @@ public class OnMineDeath : MonoBehaviour {
     CircleCollider2D thisCollider;
     GameObject targetHit;
     public int rateOfIncrease;
+    public float damage;
+    public float maxRadius;
 
     void Awake()
     {
@@ -17,7 +19,7 @@ public class OnMineDeath : MonoBehaviour {
     {
         thisCollider.radius += (rateOfIncrease * 0.01f);
 
-        if (thisCollider.radius >= 1.5)
+        if (thisCollider.radius >= maxRadius)
         {
             Destroy(gameObject);
         }
@@ -28,7 +30,7 @@ public class OnMineDeath : MonoBehaviour {
         targetHit = collision.gameObject;
         if (targetHit.tag == "Enemy")
         {
-            targetHit.GetComponent<Enemy>().health -= 50;
+            targetHit.GetComponent<Enemy>().health -= damage;
         }
     }
 }

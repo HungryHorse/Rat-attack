@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public bool isTutorial;
     public bool isLast;
     public bool sawPlayer;
-    public int health;
+    public float health;
     public GameObject player;
     PlayerStats playerStats;
     public GameObject playerDirectionMonitor;
@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
 
         if (distanceToPlayer < 1 && playerStats.iFramesLeft <= 0 && !playerStats.shieldIsOn)
         {
-            playerStats.health -= 10;
+            playerStats.health -= 10f * playerStats.resistance;
             playerStats.hit = true;
         }
 
