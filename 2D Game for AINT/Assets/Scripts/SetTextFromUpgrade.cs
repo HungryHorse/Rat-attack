@@ -9,8 +9,9 @@ public class SetTextFromUpgrade : MonoBehaviour
 
 	void Start ()
     {
-		
-	}
+        UpdateText();
+
+    }
 	
 
 	public void UpdateText ()

@@ -22,6 +22,9 @@ public class UpgradeManager : MonoBehaviour {
     public void OnUpgradeCooldown ()
     {
         print("cooldown upgraded");
-        PlayerPrefs.SetInt("CooldownUpgrade", PlayerPrefs.GetInt("CooldownUpgrade") + 1);
+        if (PlayerPrefs.GetInt("CooldownUpgrade") < 5)
+        {
+            PlayerPrefs.SetInt("CooldownUpgrade", PlayerPrefs.GetInt("CooldownUpgrade") + 1);
+        }
     }
 }
