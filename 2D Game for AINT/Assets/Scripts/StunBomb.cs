@@ -49,7 +49,7 @@ public class StunBomb : MonoBehaviour {
         }
     }
 
-    void TimeIncrease(int level)
+    public void TimeIncrease(int level)
     {
         switch (level)
         {
@@ -73,7 +73,7 @@ public class StunBomb : MonoBehaviour {
         }
     }
 
-    void CoolDownReduc(int level)
+    public void CoolDownReduc(int level)
     {
         switch (level)
         {
@@ -97,7 +97,7 @@ public class StunBomb : MonoBehaviour {
         }
     }
 
-    void RadiusIncrease(int level)
+    public void RadiusIncrease(int level)
     {
         switch (level)
         {

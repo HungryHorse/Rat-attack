@@ -44,7 +44,7 @@ public class Movement : MonoBehaviour {
         rigidbody2D.angularVelocity = 0.0f;
     }
 
-    void SpeedIncrease(int level)
+    public void SpeedIncrease(int level)
     {
         switch (level)
         {
@@ -68,7 +68,7 @@ public class Movement : MonoBehaviour {
         }
     }
 
-    void ResistanceIncrease(int level)
+    public void ResistanceIncrease(int level)
     {
         switch (level)
         {
@@ -93,7 +93,7 @@ public class Movement : MonoBehaviour {
         }
     }
 
-    void TimeIncrease(int level)
+    public void TimeIncrease(int level)
     {
         switch (level)
         {
@@ -117,7 +117,7 @@ public class Movement : MonoBehaviour {
         }
     }
 
-    void CoolDownReduc(int level)
+    public void CoolDownReduc(int level)
     {
         switch (level)
         {

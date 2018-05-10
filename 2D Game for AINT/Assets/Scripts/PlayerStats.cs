@@ -100,19 +100,44 @@ public class PlayerStats : MonoBehaviour {
 
     public void EnableDisableStunBomb(bool setValue)
     {
-        gameObject.GetComponent<StunBomb>().enabled = setValue;
+        StunBomb stun = gameObject.GetComponent<StunBomb>();
+        stun.enabled = setValue;
+        if (setValue)
+        {
+            stun.CoolDownReduc(PlayerPrefs.GetInt("stunCooldown"));
+            stun.TimeIncrease(PlayerPrefs.GetInt("lengthOfStun"));
+            if (PlayerPrefs.GetInt("stunDoesDamage") == 1)
+            {
+                stun.doesDamage = true;
+            }
+            stun.RadiusIncrease(PlayerPrefs.GetInt("stunRadius"));
+        }
     }
 
     public void EnableDisableDash(bool setValue)
     {
-        gameObject.GetComponent<Movement>().DashEnabled = setValue;
+        Movement move = gameObject.GetComponent<Movement>();
+        move.ResistanceIncrease(PlayerPrefs.GetInt("reduceDamage"));
+        move.DashEnabled = setValue;
+        if (setValue)
+        {
+            move.CoolDownReduc(PlayerPrefs.GetInt("dashCooldown"));
+            move.SpeedIncrease(PlayerPrefs.GetInt("dashSpeed"));
+            move.TimeIncrease(PlayerPrefs.GetInt("lengthOfDash"));
+        }
     }
 
     public void EnableDisableMinePooper(bool setValue)
     {
-        gameObject.GetComponent<MinePooper>().enabled = setValue;
+        MinePooper mine = gameObject.GetComponent<MinePooper>();
+        mine.enabled = setValue;
+        if (setValue)
+        {
+            mine.CoolDownReduc(PlayerPrefs.GetInt("mineCooldown"));
+            mine.DamageIncrease(PlayerPrefs.GetInt("damageIncrease"));
+            mine.RadiusIncrease(PlayerPrefs.GetInt("mineRadius"));
+        }
     }
-
     void CoolDownReduc(int level)
     {
         switch (level)

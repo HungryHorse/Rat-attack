@@ -21,9 +21,14 @@ public class MinePooper : MonoBehaviour {
         MineSpawner = GameObject.Find("MineSpawner");
         CooldownImage.fillAmount = 0;
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void OnEnable()
+    {
+        extraCharges = PlayerPrefs.GetInt("mineCharges");
+    }
+
+    // Update is called once per frame
+    void Update () {
         
         if (Input.GetButtonDown("Jump") && currentCooldownTime <= 0)
         {
@@ -58,7 +63,7 @@ public class MinePooper : MonoBehaviour {
         }
 	}
 
-    void DamageIncrease(int level)
+    public void DamageIncrease(int level)
     {
         switch (level)
         {
@@ -82,7 +87,7 @@ public class MinePooper : MonoBehaviour {
         }
     }
 
-    void RadiusIncrease(int level)
+    public void RadiusIncrease(int level)
     {
         switch (level)
         {
@@ -106,7 +111,7 @@ public class MinePooper : MonoBehaviour {
         }
     }
 
-    void CoolDownReduc(int level)
+    public void CoolDownReduc(int level)
     {
         switch (level)
         {
