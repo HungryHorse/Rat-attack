@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour {
     public float lifeTime;
     public GameObject thisBullet;
     GameObject targetHit;
-    public int damage;
+    public float damage;
 
 	public void Made()
     {

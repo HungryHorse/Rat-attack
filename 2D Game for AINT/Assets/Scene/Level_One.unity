@@ -530,6 +530,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WarningMessage: {fileID: 0}
+  AudioManager: {fileID: 0}
+  audioControl: {fileID: 270288711}
 --- !u!1001 &270288710
 Prefab:
   m_ObjectHideFlags: 0
@@ -577,6 +579,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1809d2cafc5531c42b2791f622f4dd45, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &270288711 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114726659703537960, guid: 1809d2cafc5531c42b2791f622f4dd45,
+    type: 2}
+  m_PrefabInternal: {fileID: 270288710}
+  m_Script: {fileID: 11500000, guid: b9ab79688b4e7fd44a6199e51e9d407c, type: 3}
 --- !u!1 &287354438
 GameObject:
   m_ObjectHideFlags: 0
@@ -3178,7 +3186,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.0390625
+  orthographic size: 5.84375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3776,6 +3784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  resistance: 0
   won: 0
   Knowledge: 0
   hit: 0
@@ -3788,6 +3797,7 @@ MonoBehaviour:
   cooldownText: {fileID: 960984392}
   cooldown: 10
   cooldownObject: {fileID: 432439943}
+  HOTActive: 0
   iFrames: 2
   iFramesLeft: 0
   win: {fileID: 1052553854}
@@ -3835,6 +3845,9 @@ MonoBehaviour:
   CooldownImage: {fileID: 536648427}
   cooldownText: {fileID: 1530085620}
   cooldown: 10
+  damage: 25
+  extraCharges: 0
+  maxRadius: 1.5
   cooldownObject: {fileID: 1015634347}
 --- !u!114 &1807548482
 MonoBehaviour:
@@ -3850,8 +3863,10 @@ MonoBehaviour:
   CooldownImage: {fileID: 830603290}
   cooldownText: {fileID: 1334449077}
   cooldown: 10
+  doesDamage: 0
   rateOfIncrease: 10
   stunTime: 1
+  maxRadius: 3
   cooldownObject: {fileID: 1214890072}
 --- !u!58 &1807548483
 CircleCollider2D:

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Mines : MonoBehaviour {
     public GameObject MineDeath;
+    public float damage;
+    public float maxRadius;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,7 +18,9 @@ public class Mines : MonoBehaviour {
     
     void SteppedOn()
     {
-        Instantiate(MineDeath, gameObject.transform.position, gameObject.transform.rotation);
+        GameObject newMineDeath = Instantiate(MineDeath, gameObject.transform.position, gameObject.transform.rotation);
+        newMineDeath.GetComponent<OnMineDeath>().damage = damage;
+        newMineDeath.GetComponent<OnMineDeath>().maxRadius = maxRadius;
     }
     
 }

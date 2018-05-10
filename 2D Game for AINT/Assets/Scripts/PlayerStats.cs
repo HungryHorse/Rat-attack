@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour {
 
-    public int health;
+    public float health;
+    public float resistance;
     public bool won;
     public float Knowledge;
     public bool hit;
@@ -21,6 +22,7 @@ public class PlayerStats : MonoBehaviour {
     public float cooldown;
     public GameObject cooldownObject;
     float currentCooldownTime;
+    public bool HOTActive;
 
 
     public float iFrames;
@@ -105,6 +107,54 @@ public class PlayerStats : MonoBehaviour {
         gameObject.GetComponent<MinePooper>().enabled = setValue;
     }
 
+    void CoolDownReduc(int level)
+    {
+        switch (level)
+        {
+            case (1):
+                cooldown -= (cooldown * 0.05f);
+                break;
+            case (2):
+                cooldown -= (cooldown * 0.1f);
+                break;
+            case (3):
+                cooldown -= (cooldown * 0.15f);
+                break;
+            case (4):
+                cooldown -= (cooldown * 0.2f);
+                break;
+            case (5):
+                cooldown -= (cooldown * 0.25f);
+                break;
+            default:
+                break;
+        }
+    }
+
+    void TimeIncrease(int level)
+    {
+        switch (level)
+        {
+            case (1):
+                shieldTime += (shieldTime * 0.05f);
+                break;
+            case (2):
+                shieldTime += (shieldTime * 0.1f);
+                break;
+            case (3):
+                shieldTime += (shieldTime * 0.15f);
+                break;
+            case (4):
+                shieldTime += (shieldTime * 0.2f);
+                break;
+            case (5):
+                shieldTime += (shieldTime * 0.25f);
+                break;
+            default:
+                break;
+        }
+    }
+
     private void Update()
     {
         if (hit == true)
@@ -134,12 +184,22 @@ public class PlayerStats : MonoBehaviour {
             healthImage.fillAmount -= (0.3f * Time.deltaTime);
         }
 
+        if (healthImage.fillAmount <= health / 100.0f)
+        {
+            healthImage.fillAmount += (0.3f * Time.deltaTime);
+        }
+
         if (Input.GetButtonDown("Jump") && currentCooldownTime <= 0 && shieldEnabled)
         {
             cooldownObject.SetActive(true);
             currentShieldTime = shieldTime;
             CooldownImage.fillAmount = 1;
             currentCooldownTime = cooldown;
+        }
+
+        if (HOTActive)
+        {
+            health += 0.1f * Time.deltaTime;
         }
 
         if (currentShieldTime >= 0)

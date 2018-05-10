@@ -44,6 +44,103 @@ public class Movement : MonoBehaviour {
         rigidbody2D.angularVelocity = 0.0f;
     }
 
+    void SpeedIncrease(int level)
+    {
+        switch (level)
+        {
+            case (1):
+                dashSpeed += (dashSpeed * 0.05f);
+                break;
+            case (2):
+                dashSpeed += (dashSpeed * 0.1f);
+                break;
+            case (3):
+                dashSpeed += (dashSpeed * 0.15f);
+                break;
+            case (4):
+                dashSpeed += (dashSpeed * 0.2f);
+                break;
+            case (5):
+                dashSpeed += (dashSpeed * 0.25f);
+                break;
+            default:
+                break;
+        }
+    }
+
+    void ResistanceIncrease(int level)
+    {
+        switch (level)
+        {
+            case (1):
+                player.resistance = 0.95f;
+                break;
+            case (2):
+                player.resistance = 0.90f;
+                break;
+            case (3):
+                player.resistance = 0.85f;
+                break;
+            case (4):
+                player.resistance = 0.80f;
+                break;
+            case (5):
+                player.resistance = 0.75f;
+                break;
+            default:
+                player.resistance = 1f;
+                break;
+        }
+    }
+
+    void TimeIncrease(int level)
+    {
+        switch (level)
+        {
+            case (1):
+                dashTimer += (dashTimer * 0.05f);
+                break;
+            case (2):
+                dashTimer += (dashTimer * 0.1f);
+                break;
+            case (3):
+                dashTimer += (dashTimer * 0.15f);
+                break;
+            case (4):
+                dashTimer += (dashTimer * 0.2f);
+                break;
+            case (5):
+                dashTimer += (dashTimer * 0.25f);
+                break;
+            default:
+                break;
+        }
+    }
+
+    void CoolDownReduc(int level)
+    {
+        switch (level)
+        {
+            case (1):
+                cooldown -= (cooldown * 0.05f);
+                break;
+            case (2):
+                cooldown -= (cooldown * 0.1f);
+                break;
+            case (3):
+                cooldown -= (cooldown * 0.15f);
+                break;
+            case (4):
+                cooldown -= (cooldown * 0.2f);
+                break;
+            case (5):
+                cooldown -= (cooldown * 0.25f);
+                break;
+            default:
+                break;
+        }
+    }
+
     void Update()
     {
         if (Input.GetButtonDown("Jump") && currentCooldownTime <= 0 && DashEnabled)
