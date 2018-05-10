@@ -8,7 +8,7 @@ public class PlayerStats : MonoBehaviour {
     public float health;
     public float resistance;
     public bool won;
-    public float Knowledge;
+    public int Knowledge;
     public bool hit;
     public bool shieldEnabled;
     public bool shieldIsOn;
@@ -45,6 +45,12 @@ public class PlayerStats : MonoBehaviour {
             if (chosenUpgrade == 1)
             {
                 EnableDisableShield(true);
+                CoolDownReduc(PlayerPrefs.GetInt("CooldownUpgrade"));
+                TimeIncrease(PlayerPrefs.GetInt("TimeUpgrade"));
+                if(PlayerPrefs.GetInt("HOT") == 1)
+                {
+                    HOTActive = true;
+                }
             }
             else
             {
@@ -171,6 +177,7 @@ public class PlayerStats : MonoBehaviour {
         if (health <= 0)
         {
             KnowledgeText.text = "Knowledge collected this run: " + Knowledge;
+            PlayerPrefs.SetInt("Knowledge", PlayerPrefs.GetInt("Knowledge") + Knowledge);
             if (won)
             {
                 win.SetActive(true);

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class SetTextFromUpgrade : MonoBehaviour
 {
     public Text text;
+    public string PlayerPrefName;
+    public string maxAmount;
 
 	void Start ()
     {
@@ -16,6 +18,6 @@ public class SetTextFromUpgrade : MonoBehaviour
 
 	public void UpdateText ()
     {
-        text.text = PlayerPrefs.GetInt("CooldownUpgrade").ToString() + "/5";
+        text.text = PlayerPrefs.GetInt(PlayerPrefName).ToString() + "/" + maxAmount;
 	}
 }
