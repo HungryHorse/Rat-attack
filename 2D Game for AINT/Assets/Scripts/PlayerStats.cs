@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour {
 
     public float health;
-    public float resistance;
+    public float resistance = 1;
     public bool won;
     public int Knowledge;
     public bool hit;
@@ -117,10 +117,10 @@ public class PlayerStats : MonoBehaviour {
     public void EnableDisableDash(bool setValue)
     {
         Movement move = gameObject.GetComponent<Movement>();
-        move.ResistanceIncrease(PlayerPrefs.GetInt("reduceDamage"));
         move.DashEnabled = setValue;
         if (setValue)
         {
+            move.ResistanceIncrease(PlayerPrefs.GetInt("reduceDamage"));
             move.CoolDownReduc(PlayerPrefs.GetInt("dashCooldown"));
             move.SpeedIncrease(PlayerPrefs.GetInt("dashSpeed"));
             move.TimeIncrease(PlayerPrefs.GetInt("lengthOfDash"));
