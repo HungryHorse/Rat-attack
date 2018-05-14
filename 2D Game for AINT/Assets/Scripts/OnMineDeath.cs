@@ -9,9 +9,12 @@ public class OnMineDeath : MonoBehaviour {
     public int rateOfIncrease;
     public float damage;
     public float maxRadius;
+    public GameObject audioManager;
 
     void Awake()
     {
+        audioManager = GameObject.Find("AudioController");
+        audioManager.GetComponent<AudioController>().PlayExplosionSound();
         thisCollider = gameObject.GetComponent<CircleCollider2D>();
     }
 

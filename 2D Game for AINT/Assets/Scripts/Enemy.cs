@@ -20,9 +20,11 @@ public class Enemy : MonoBehaviour
     public GameObject Portal;
     public GameObject TutorialPortal;
     public MapManager mapManager;
+    public GameObject audioManager;
 
     void Start()
     {
+        audioManager = GameObject.Find("AudioController");
         player = GameObject.Find("Player");
         mapManager = GameObject.Find("MapManager").GetComponent<MapManager>();
         playerDirectionMonitor = gameObject.transform.GetChild(1).gameObject;
@@ -51,12 +53,14 @@ public class Enemy : MonoBehaviour
 
         if (distanceToPlayer < 1 && playerStats.iFramesLeft <= 0 && !playerStats.shieldIsOn)
         {
+            audioManager.GetComponent<AudioController>().PlayGettingHitSound(); 
             playerStats.health -= 10f * playerStats.resistance;
             playerStats.hit = true;
         }
 
         if (health <= 0)
         {
+            audioManager.GetComponent<AudioController>().PlayEnemyDeathSound();
             if (isLast && isTutorial)
             {
                 GameObject newPortal = Instantiate(TutorialPortal, transform.position, Quaternion.identity);

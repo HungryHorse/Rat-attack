@@ -14,6 +14,7 @@ public class MinePooper : MonoBehaviour {
     public int extraCharges;
     public float maxRadius;
     public GameObject cooldownObject;
+    public GameObject audioManager;
     float currentCooldownTime;
 
 	// Use this for initialization
@@ -32,6 +33,7 @@ public class MinePooper : MonoBehaviour {
         
         if (Input.GetButtonDown("Jump") && currentCooldownTime <= 0)
         {
+            audioManager.GetComponent<AudioController>().PlayShotSound();
             cooldownObject.SetActive(true);
             CooldownImage.fillAmount = 1;
             GameObject newMine = Instantiate(Mine, gameObject.transform.position, gameObject.transform.rotation);
@@ -43,6 +45,7 @@ public class MinePooper : MonoBehaviour {
         {
             if(Input.GetButtonDown("Jump") && extraCharges > 0)
             {
+                audioManager.GetComponent<AudioController>().PlayMinePooperSound();
                 extraCharges--;
                 GameObject newMine = Instantiate(Mine, gameObject.transform.position, gameObject.transform.rotation);
                 newMine.GetComponent<Mines>().damage = damage;

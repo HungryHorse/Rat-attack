@@ -23,6 +23,7 @@ public class ChangeScene : MonoBehaviour {
 
     public void OnButton(int scene)
     {
+        Time.timeScale = 1;
         fadeOut = true;
         sceneTochangeTo = scene;
     }

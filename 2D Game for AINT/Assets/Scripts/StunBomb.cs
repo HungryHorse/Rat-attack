@@ -17,6 +17,7 @@ public class StunBomb : MonoBehaviour {
     public float maxRadius;
     public GameObject cooldownObject;
     float currentCooldownTime;
+    public GameObject audioManager;
 
 
     // Use this for initialization
@@ -30,6 +31,7 @@ public class StunBomb : MonoBehaviour {
 
         if (Input.GetButtonDown("Jump") && currentCooldownTime <= 0)
         {
+            audioManager.GetComponent<AudioController>().PlayStunSound();
             cooldownObject.SetActive(true);
             CooldownImage.fillAmount = 1;
             Used = true;

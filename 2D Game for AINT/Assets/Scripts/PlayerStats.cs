@@ -16,6 +16,7 @@ public class PlayerStats : MonoBehaviour {
     float currentShieldTime;
     public GameObject shield;
     public int isTutorial;
+    public GameObject audioManager;
 
     public Image CooldownImage;
     public Text cooldownText;
@@ -37,6 +38,7 @@ public class PlayerStats : MonoBehaviour {
         isTutorial = PlayerPrefs.GetInt("Tutorial");
 
         iFramesLeft = 0;
+        currentShieldTime = -0.1f;
 
         if (isTutorial != 1)
         {
@@ -201,6 +203,7 @@ public class PlayerStats : MonoBehaviour {
 
         if (health <= 0)
         {
+            audioManager.GetComponent<AudioController>().PlayPlayerDeathSound();
             KnowledgeText.text = "Knowledge collected this run: " + Knowledge;
             PlayerPrefs.SetInt("Knowledge", PlayerPrefs.GetInt("Knowledge") + Knowledge);
             if (won)
@@ -223,6 +226,7 @@ public class PlayerStats : MonoBehaviour {
 
         if (Input.GetButtonDown("Jump") && currentCooldownTime <= 0 && shieldEnabled)
         {
+            audioManager.GetComponent<AudioController>().PlayShieldApplySound();
             cooldownObject.SetActive(true);
             currentShieldTime = shieldTime;
             CooldownImage.fillAmount = 1;
@@ -232,6 +236,11 @@ public class PlayerStats : MonoBehaviour {
         if (HOTActive)
         {
             health += 0.1f * Time.deltaTime;
+        }
+
+        if (currentShieldTime >= 0 && currentShieldTime <= 0.02)
+        {
+            audioManager.GetComponent<AudioController>().PlayShieldDecaySound();
         }
 
         if (currentShieldTime >= 0)

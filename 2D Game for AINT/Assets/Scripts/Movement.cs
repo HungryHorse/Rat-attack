@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour {
     Rigidbody2D rigidbody2D;
     public Animator animator;
     public PlayerStats player;
+    public GameObject audioManager;
 
     public Image CooldownImage;
     public Text cooldownText;
@@ -145,6 +146,7 @@ public class Movement : MonoBehaviour {
     {
         if (Input.GetButtonDown("Jump") && currentCooldownTime <= 0 && DashEnabled)
         {
+            audioManager.GetComponent<AudioController>().PlayDashSound();
             cooldownObject.SetActive(true);
             CooldownImage.fillAmount = 1;
             speed = dashSpeed;

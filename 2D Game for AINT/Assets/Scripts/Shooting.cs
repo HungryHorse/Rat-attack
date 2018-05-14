@@ -12,6 +12,7 @@ public class Shooting : MonoBehaviour {
     public GameObject SpawnPoint;
     public string FireSide;
     Vector3[] rots = new Vector3[3];
+    public GameObject audioManager;
 
     void Start()
     {
@@ -46,6 +47,7 @@ public class Shooting : MonoBehaviour {
         if (Input.GetButton(FireSide) && canShoot)
         {
             Fire();
+            
         }
 		
         if(currentWeapon.rechamberTimer > 0)
@@ -59,6 +61,7 @@ public class Shooting : MonoBehaviour {
 
         if (currentWeapon.type == 0 && currentWeapon.rechamberTimer <= 0)
         {
+            audioManager.GetComponent<AudioController>().PlayShotSound();
             GameObject newBullet = Instantiate(currentWeapon.bullet, SpawnPoint.transform.position, SpawnPoint.transform.rotation);
             Bullet newBulletScript = newBullet.GetComponent<Bullet>();
             newBulletScript.lifeTime = currentWeapon.bulletLifeTime;
@@ -71,6 +74,7 @@ public class Shooting : MonoBehaviour {
         }
         if (currentWeapon.type == 1 && currentWeapon.rechamberTimer <= 0)
         {
+            audioManager.GetComponent<AudioController>().PlayShotSound();
             GameObject[] newBullets = new GameObject[3];
             for(int i = 0; i <= newBullets.Length - 1; i++)
             {
