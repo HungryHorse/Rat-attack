@@ -13,12 +13,19 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler 
     public string toolTipDescription;
     public string toolTipTitle;
     public string cost;
-    
+    public bool castOnLeft;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         currentToolTip = Instantiate(tooltipObject, canvas.transform);
-        currentToolTip.transform.position = new Vector3 (gameObject.transform.position.x - 11.5f, gameObject.transform.position.y - 12f);
+        if (castOnLeft)
+        {
+            currentToolTip.transform.position = new Vector3(gameObject.transform.position.x - 2.8f, gameObject.transform.position.y - 1.2f);
+        }
+        else
+        {
+            currentToolTip.transform.position = new Vector3(gameObject.transform.position.x + 2.8f, gameObject.transform.position.y - 1.2f);
+        }
 
         currentToolTip.transform.GetChild(0).GetComponent<Text>().text = toolTipDescription;
         currentToolTip.transform.GetChild(1).GetComponent<Text>().text = toolTipTitle;
