@@ -7,7 +7,10 @@ public class WeaponSelector : MonoBehaviour {
 
     public Image currImageLeft;
     public Image currImageRight;
+    public Text RightText;
+    public Text LeftText;
     public Sprite[] WeaponImages;
+    public string[] Names;
     public int currentIndexLeft;
     public int currentIndexRight;
 
@@ -21,6 +24,8 @@ public class WeaponSelector : MonoBehaviour {
     void Update () {
         currImageRight.sprite = WeaponImages[currentIndexRight];
         currImageLeft.sprite = WeaponImages[currentIndexLeft];
+        RightText.text = Names[currentIndexRight];
+        LeftText.text = Names[currentIndexLeft];
     }
 
     public void TickUpRight()

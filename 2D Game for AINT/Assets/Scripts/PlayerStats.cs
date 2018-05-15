@@ -39,6 +39,7 @@ public class PlayerStats : MonoBehaviour {
 
         iFramesLeft = 0;
         currentShieldTime = -0.1f;
+        resistance = 1;
 
         if (isTutorial != 1)
         {

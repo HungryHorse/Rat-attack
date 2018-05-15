@@ -5,17 +5,20 @@ using UnityEngine.UI;
 using UnityEngine.Audio;
 
 public class MusicSliders : MonoBehaviour {
-
-    public Slider Master;
-    public Slider Music;
-    public Slider SFX;
+    
     public AudioMixer masterMixer;
 
 
-    public void OnSliderChange(Slider[] inputSliders)
+    public void OnMasterSliderChange(float changeTo)
     {
-        inputSliders[0].value = 
-        inputSliders[1].value = 
-        inputSliders[2].value = 
+         masterMixer.SetFloat("Master", changeTo);
+    }
+    public void OnMusicSliderChange(float changeTo)
+    {
+        masterMixer.SetFloat("Music", changeTo);
+    }
+    public void OnSFXSliderChange(float changeTo)
+    {
+        masterMixer.SetFloat("SoundFX", changeTo);
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour {
     public GameObject PauseMenu;
+    public GameObject SoundOptions;
     public GameObject GunRight;
     public GameObject GunLeft;
 
@@ -18,6 +19,7 @@ public class Pause : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseMenu.SetActive(!PauseMenu.activeInHierarchy);
+            SoundOptions.SetActive(false);
             if (Time.timeScale == 0)
             {
                 Time.timeScale = 1;
@@ -28,7 +30,7 @@ public class Pause : MonoBehaviour {
             }
         }
 
-        if (PauseMenu.activeInHierarchy)
+        if (PauseMenu.activeInHierarchy || SoundOptions.activeInHierarchy)
         {
             GunLeft.SetActive(false);
             GunRight.SetActive(false);
@@ -44,5 +46,17 @@ public class Pause : MonoBehaviour {
     {
         PauseMenu.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public void Options()
+    {
+        PauseMenu.SetActive(false);
+        SoundOptions.SetActive(true);
+    }
+
+    public void Back()
+    {
+        PauseMenu.SetActive(true);
+        SoundOptions.SetActive(false);
     }
 }
