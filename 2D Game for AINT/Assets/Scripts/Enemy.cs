@@ -21,10 +21,12 @@ public class Enemy : MonoBehaviour
     public GameObject TutorialPortal;
     public MapManager mapManager;
     public GameObject audioManager;
+    Animator myAnim;
 
     void Start()
     {
         audioManager = GameObject.Find("AudioController");
+        myAnim = transform.GetChild(0).GetComponent<Animator>();
         player = GameObject.Find("Player");
         mapManager = GameObject.Find("MapManager").GetComponent<MapManager>();
         playerDirectionMonitor = gameObject.transform.GetChild(1).gameObject;
@@ -48,6 +50,10 @@ public class Enemy : MonoBehaviour
             playerDirectionMonitor.transform.rotation = newRotation;
 
             sendRay(playerDirectionMonitor);
+        }
+        else
+        {
+            myAnim.SetBool("isWalking", true);
         }
 
 
