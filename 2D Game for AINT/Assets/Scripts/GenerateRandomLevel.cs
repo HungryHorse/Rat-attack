@@ -17,11 +17,14 @@ public class GenerateRandomLevel : MonoBehaviour {
     float amountY;
     float currX;
     float currY;
+    int[,] twoDCheckArray;
+    int yPos;
+    int xPos;
 
 
     public void GenNewLevel(int levelNumber, GameObject map)
     {
-        int numberOfRooms = rand.Next(levelNumber + 4, levelNumber + 6);
+        int numberOfRooms = rand.Next(levelNumber + 4, levelNumber + 7);
         int currentRoomInt = 0;
         GameObject currentRoomObject;
         Room prevRoom = new Room();
@@ -29,6 +32,9 @@ public class GenerateRandomLevel : MonoBehaviour {
         amountY = 0;
         currX = 0;
         currY = 0;
+        xPos = levelNumber + 6;
+        yPos = levelNumber + 6;
+        twoDCheckArray = new int[(levelNumber + 6) *2, (levelNumber + 6) * 2];
 
         while (currentRoomInt <= numberOfRooms)
         {
@@ -46,9 +52,10 @@ public class GenerateRandomLevel : MonoBehaviour {
                 currRoom = rooms[0];
                 currentRoomObject = Instantiate(currRoom.levelObject, new Vector3(0, 0, 0), Quaternion.identity);
                 currentRoomObject.transform.GetChild(direction).gameObject.SetActive(false);
+                twoDCheckArray[xPos, yPos] = 1;
             }
             else
-            {
+            {                    
                 if (direction <= 2)
                 {
                     prevDirection = direction + 2;
@@ -118,53 +125,42 @@ public class GenerateRandomLevel : MonoBehaviour {
 
     public bool GoingToClash(int tryDir)
     {
-        int rightLeftCounts = 0;
-        int upDownCounts = 0;
-
+        int tempXPos = 0;
+        int tempYPos = 0;
         if(tryDir == 1)
         {
-            rightLeftCounts --;
+            tempXPos = xPos - 1;
         }
         if (tryDir == 2)
         {
-            upDownCounts ++;
+            tempYPos = yPos + 1;
         }
         if (tryDir == 3)
         {
-            rightLeftCounts ++;
+            tempXPos = xPos + 1;
         }
         if (tryDir == 4)
         {
-            upDownCounts --;
+            tempYPos = yPos - 1;
         }
 
-        for (int i = 0; i < dirList.Count; i++)
+        try
         {
-            if (dirList[i] == 1)
+            if (twoDCheckArray[tempXPos, tempYPos] == 1)
             {
-                rightLeftCounts --;
+                return true;
             }
-            if (dirList[i] == 2)
+            else
             {
-                upDownCounts ++;
-            }
-            if (dirList[i] == 3)
-            {
-                rightLeftCounts ++;
-            }
-            if (dirList[i] == 4)
-            {
-                upDownCounts --;
+                twoDCheckArray[tempXPos, tempYPos] = 1;
+                xPos = tempXPos;
+                yPos = tempYPos;
+                return false;
             }
         }
-
-        if(rightLeftCounts == 0 && upDownCounts == 0)
+        catch
         {
             return true;
-        }
-        else
-        {
-            return false;
         }
     }
 }

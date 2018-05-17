@@ -16,7 +16,7 @@ public class UpgradeManager : MonoBehaviour {
 	void Start () {
         knowledge = PlayerPrefs.GetInt("Knowledge", 0); 
         tierOnePrice = 20;
-        tierTwoPrice = 25;
+        tierTwoPrice = 30;
 
 
         if (!PlayerPrefs.HasKey("CooldownUpgrade"))
