@@ -20,7 +20,7 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler 
         currentToolTip = Instantiate(tooltipObject, canvas.transform);
         if (castOnLeft)
         {
-            currentToolTip.transform.position = new Vector3(gameObject.transform.position.x - 2.8f, gameObject.transform.position.y - 1.2f);
+            currentToolTip.transform.position = new Vector3(gameObject.transform.position.x - (Screen.width * 0.4f) , gameObject.transform.position.y - Screen.height * 0.4f);
         }
         else
         {
