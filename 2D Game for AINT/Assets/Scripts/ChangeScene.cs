@@ -54,7 +54,7 @@ public class ChangeScene : MonoBehaviour {
         }
         else
         {
-            WarningMessage.SetActive(false);
+            SceneManager.LoadScene(2);
         }
     }
 
