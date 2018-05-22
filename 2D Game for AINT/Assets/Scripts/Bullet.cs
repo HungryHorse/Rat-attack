@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour {
     private void OnTriggerStay2D(Collider2D collision)
     {
         targetHit = collision.gameObject;
-        if (targetHit.tag != "Bullet")
+        if (targetHit.tag != "Bullet" || targetHit.tag != "Knowledge" || targetHit.tag != "Player")
         {
             Destroy(gameObject);
         }

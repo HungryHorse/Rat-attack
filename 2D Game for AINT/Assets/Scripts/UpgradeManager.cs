@@ -14,7 +14,7 @@ public class UpgradeManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        knowledge = PlayerPrefs.GetInt("Knowledge", 0); 
+        knowledge = PlayerPrefs.GetInt("Knowledge", 0);
         tierOnePrice = 20;
         tierTwoPrice = 30;
 
