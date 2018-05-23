@@ -18,7 +18,7 @@ public class UpgradeManager : MonoBehaviour {
         tierOnePrice = 20;
         tierTwoPrice = 30;
 
-
+        // This huge list just makes sure all the player prefs for the upgrades are set up correctly
         if (!PlayerPrefs.HasKey("CooldownUpgrade"))
         {
             PlayerPrefs.SetInt("CooldownUpgrade", 0);
@@ -83,16 +83,17 @@ public class UpgradeManager : MonoBehaviour {
 
     }
 	
-	// Update is called once per frame
 	void Update () {
         knowledgeText.text = "Knowledge fragments: " + knowledge.ToString();
     }
 
+    // when the scene changes the object is destroyed and this sets the player pref containing how much knowledge you have is updated 
     private void OnDestroy()
     {
         PlayerPrefs.SetInt("Knowledge", knowledge);
     }
 
+    // These set the level of each upgrade in player prefs and handel the buying of the upgrades where knowledge is used as a currency
     public void OnUpgradeCooldown ()
     {
         if (PlayerPrefs.GetInt("CooldownUpgrade") < 5 && knowledge > tierOnePrice)

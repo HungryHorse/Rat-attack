@@ -14,6 +14,7 @@ public class WeaponSelector : MonoBehaviour {
     public int currentIndexLeft;
     public int currentIndexRight;
 
+    // on start the playerprefs are set to the left index and the right index
     void Start()
     {
         PlayerPrefs.SetInt("Fire1", currentIndexLeft);
@@ -21,13 +22,14 @@ public class WeaponSelector : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update () { // in update the picture and text is told to match the index
         currImageRight.sprite = WeaponImages[currentIndexRight];
         currImageLeft.sprite = WeaponImages[currentIndexLeft];
         RightText.text = Names[currentIndexRight];
         LeftText.text = Names[currentIndexLeft];
     }
 
+    // Moves the weapon selector on the right up one, used on the up arrow
     public void TickUpRight()
     {
         currentIndexRight++;
@@ -38,6 +40,7 @@ public class WeaponSelector : MonoBehaviour {
         PlayerPrefs.SetInt("Fire2", currentIndexRight);
     }
 
+    // Moves the weapon selector on the right down one, used on the down arrow
     public void TickDownRight()
     {
         currentIndexRight--;
@@ -48,6 +51,7 @@ public class WeaponSelector : MonoBehaviour {
         PlayerPrefs.SetInt("Fire2", currentIndexRight);
     }
 
+    // Moves the weapon selector on the left up one, used on the up arrow
     public void TickUpLeft()
     {
         currentIndexLeft++;
@@ -58,6 +62,7 @@ public class WeaponSelector : MonoBehaviour {
         PlayerPrefs.SetInt("Fire1", currentIndexLeft);
     }
 
+    // Moves the weapon selector on the left down one, used on the down arrow
     public void TickDownLeft()
     {
         currentIndexLeft--;

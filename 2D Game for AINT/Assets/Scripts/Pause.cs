@@ -16,6 +16,8 @@ public class Pause : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
+        // allows you to open the pause menu in game by pressing ESC
+        // or if the sound options is open will return you to the pause menu
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseMenu.SetActive(!PauseMenu.activeInHierarchy);

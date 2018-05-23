@@ -30,7 +30,8 @@ public class MinePooper : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        
+
+        // Handles the useage and cooldown of the mine pooper ability
         if (Input.GetButtonDown("Jump") && currentCooldownTime <= 0)
         {
             audioManager.GetComponent<AudioController>().PlayShotSound();
@@ -43,7 +44,7 @@ public class MinePooper : MonoBehaviour {
         }
         else
         {
-            if(Input.GetButtonDown("Jump") && extraCharges > 0)
+            if(Input.GetButtonDown("Jump") && extraCharges > 0) // this is used to check if they have the extra charges upgrade as it is not affected by a cooldown
             {
                 audioManager.GetComponent<AudioController>().PlayMinePooperSound();
                 extraCharges--;
@@ -66,6 +67,7 @@ public class MinePooper : MonoBehaviour {
         }
 	}
 
+    // All functions that take level as argument are used to upgrade the mine pooper ability based on what was bought in the upgrade store 
     public void DamageIncrease(int level)
     {
         switch (level)

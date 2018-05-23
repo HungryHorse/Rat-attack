@@ -11,6 +11,8 @@ public class ChangeScene : MonoBehaviour {
     int sceneTochangeTo;
     bool fadeOut = false;
 
+
+    // This script handels the chaning of the scenes and the fade out of the music, it also tells the game whether it will be the tutorial or not
     private void Start()
     {
         AudioManager = GameObject.Find("BackgroundMusic");

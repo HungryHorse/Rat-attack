@@ -15,10 +15,12 @@ public class Bullet : MonoBehaviour {
     private void OnTriggerStay2D(Collider2D collision)
     {
         targetHit = collision.gameObject;
+        // allows the bullet to pass through knowledge fragments themselves and the player
         if (targetHit.tag != "Bullet" || targetHit.tag != "Knowledge" || targetHit.tag != "Player")
         {
             Destroy(gameObject);
         }
+        // does damage to an enemy if it hits one
         if (targetHit.tag == "Enemy")
         {
             targetHit.GetComponent<Enemy>().health -= damage;

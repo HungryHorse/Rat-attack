@@ -8,6 +8,7 @@ public class MusicSliders : MonoBehaviour {
     
     public AudioMixer masterMixer;
 
+    // Allows the UI audio sliders to change the audio mixer
 
     public void OnMasterSliderChange(float changeTo)
     {

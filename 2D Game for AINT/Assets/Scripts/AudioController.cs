@@ -20,7 +20,8 @@ public class AudioController : MonoBehaviour {
     public bool FadedIn = false;
     public bool stopFadeIn;
 
-	// Use this for initialization
+	// this script is used by objects so that they can play sounds all from the same script, this means that the sound objects not needed to be spawned only called
+
 	void Start () {
         BackgroundMusic.volume = 0.1f;
 	}

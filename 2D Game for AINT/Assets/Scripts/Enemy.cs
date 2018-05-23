@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
 
         if(!sawPlayer)
         {
+            // so that the enemy itself doesn't have to rotate it contains an object that can rotate and will always face the player
             Vector3 target = player.transform.position;
             Vector3 difference = target - transform.position;
 
@@ -49,14 +50,16 @@ public class Enemy : MonoBehaviour
             Quaternion newRotation = Quaternion.Euler(new Vector3(0.0f, 0.0f, rotZ + adjustmentAngle));
             playerDirectionMonitor.transform.rotation = newRotation;
 
+            // sends a ray from the direction that the monitor is facing which will always be towards the player to check if the player can be seen
             sendRay(playerDirectionMonitor);
         }
         else
         {
+            // if the enemy has seen the player then it will always be moving so its walk animation can be set to true
             myAnim.SetBool("isWalking", true);
         }
 
-
+        // This is used to do damage to the player based on distance and whether the player has the shield on or if the player has been hit too recently
         if (distanceToPlayer < 1 && playerStats.iFramesLeft <= 0 && !playerStats.shieldIsOn)
         {
             audioManager.GetComponent<AudioController>().PlayGettingHitSound(); 
@@ -64,6 +67,8 @@ public class Enemy : MonoBehaviour
             playerStats.hit = true;
         }
 
+        // used to kill enemies and destory their object, if the enemy has been told it is the last one then it will also spawn a portal on death
+        // if it is not the last one then it will spawn a knowledge fragment on death instead (the currency)
         if (health <= 0)
         {
             audioManager.GetComponent<AudioController>().PlayEnemyDeathSound();
@@ -86,6 +91,7 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
 
+        // used when it has been hit by the stun bomb to tell it to stop moving
         if (stunRemaining >= 0)
         {
             stunRemaining -= Time.deltaTime;
@@ -97,6 +103,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    // checks whether the ray being sent can hit the player
     void sendRay(GameObject origin)
     {
         RaycastHit2D hit = Physics2D.Raycast(origin.transform.position, origin.transform.up);
@@ -110,7 +117,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
+    // used by map manager to tell an enemy it is the last and what portal it should spawn on death
     public void YouArelastEnemy(int istutorial)
     {
         isLast = true;

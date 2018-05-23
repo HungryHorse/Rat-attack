@@ -12,6 +12,7 @@ public class KnowledgeFragmentScript : MonoBehaviour {
         audioManager = GameObject.Find("AudioController");
     }
 
+    // allows the player to pick up knowledge fragments as currency when they walk over the trigger collider
     private void OnTriggerEnter2D(Collider2D collision)
     {
         targetHit = collision.gameObject;

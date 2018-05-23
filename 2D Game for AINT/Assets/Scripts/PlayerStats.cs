@@ -41,10 +41,11 @@ public class PlayerStats : MonoBehaviour {
         currentShieldTime = -0.1f;
         resistance = 1;
 
+        // if isTutorial does not equal 1 then it is not the tutorial so sets everything up as a normal game
         if (isTutorial != 1)
         {
             int chosenUpgrade = PlayerPrefs.GetInt("ActiveUpgrade");
-
+            // as the shield upgrade is handled in this script it sets all the upgrades here
             if (chosenUpgrade == 1)
             {
                 EnableDisableShield(true);
@@ -87,7 +88,7 @@ public class PlayerStats : MonoBehaviour {
                 EnableDisableMinePooper(false);
             }
         }
-        else
+        else // if it is the tutorial set all augments to off
         {
             EnableDisableMinePooper(false);
             EnableDisableDash(false);
@@ -96,6 +97,8 @@ public class PlayerStats : MonoBehaviour {
         }
     }
 
+    // these functions are all passed whether they should be on or off via a bool called setValue
+    // the upgrades for each augment are handled here other than shield
     public void EnableDisableShield(bool setValue)
     {
         shieldEnabled = setValue;
@@ -141,6 +144,9 @@ public class PlayerStats : MonoBehaviour {
             mine.RadiusIncrease(PlayerPrefs.GetInt("mineRadius"));
         }
     }
+    // End of augment set up functions
+
+    // All functions that take level as argument are used to upgrade the shield ability based on what was bought in the upgrade store 
     void CoolDownReduc(int level)
     {
         switch (level)
@@ -225,6 +231,7 @@ public class PlayerStats : MonoBehaviour {
             healthImage.fillAmount += (0.3f * Time.deltaTime);
         }
 
+        // Handles the useage and cooldown of the dash ability
         if (Input.GetButtonDown("Jump") && currentCooldownTime <= 0 && shieldEnabled)
         {
             audioManager.GetComponent<AudioController>().PlayShieldApplySound();
@@ -234,6 +241,7 @@ public class PlayerStats : MonoBehaviour {
             currentCooldownTime = cooldown;
         }
 
+        // used if the heal over time upgrade was bought in the store
         if (HOTActive)
         {
             health += 0.1f * Time.deltaTime;
@@ -254,6 +262,7 @@ public class PlayerStats : MonoBehaviour {
             shieldIsOn = false;
         }
 
+        // used for the object called shield so it looks like the player is actually in a shield
         shield.SetActive(shieldIsOn);
 
         if (currentCooldownTime >= 0)

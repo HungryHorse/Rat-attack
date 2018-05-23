@@ -9,7 +9,7 @@ public class TutorialPortal : MonoBehaviour {
     {
         Scene = GameObject.Find("SceneChanger").GetComponent<ChangeScene>();
     }
-
+    // ends the tutorial
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")

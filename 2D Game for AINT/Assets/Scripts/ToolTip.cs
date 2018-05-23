@@ -15,6 +15,7 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler 
     public string cost;
     public bool castOnLeft;
 
+    // spawns a ui tool tip that tells the user what the upgrade does
     public void OnPointerEnter(PointerEventData eventData)
     {
         currentToolTip = Instantiate(tooltipObject, canvas.transform);

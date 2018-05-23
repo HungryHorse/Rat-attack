@@ -11,6 +11,7 @@ public class OnMineDeath : MonoBehaviour {
     public float maxRadius;
     public GameObject audioManager;
 
+    // This script creates a collider to do damage when the mine explodes
     void Awake()
     {
         audioManager = GameObject.Find("AudioController");

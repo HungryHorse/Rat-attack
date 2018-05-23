@@ -5,6 +5,7 @@ using UnityEngine;
 public class Portal : MonoBehaviour {
     MapManager mapManager;
 
+    // takes the player to the next level
     void Start()
     {
         mapManager = GameObject.Find("MapManager").GetComponent<MapManager>();

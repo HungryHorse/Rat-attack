@@ -5,6 +5,7 @@ using UnityEngine.Animations;
 
 public class SlideAnimeController : MonoBehaviour {
 
+    // Used to move the UI left and right
     public Animator anim;
     public Animator anim2;
 

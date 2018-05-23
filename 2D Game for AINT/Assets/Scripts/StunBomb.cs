@@ -29,6 +29,7 @@ public class StunBomb : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        // Handles the cooldown and useage of the stun bomb ability
         if (Input.GetButtonDown("Jump") && currentCooldownTime <= 0)
         {
             audioManager.GetComponent<AudioController>().PlayStunSound();
@@ -51,6 +52,7 @@ public class StunBomb : MonoBehaviour {
         }
     }
 
+    // All functions that take level as an argument are setting upgrades that have been bought in the upgrades section of the game
     public void TimeIncrease(int level)
     {
         switch (level)
@@ -123,6 +125,7 @@ public class StunBomb : MonoBehaviour {
         }
     }
 
+    // Handles the collider that actually stuns enemies 
     void FixedUpdate()
     {
         if (Used)

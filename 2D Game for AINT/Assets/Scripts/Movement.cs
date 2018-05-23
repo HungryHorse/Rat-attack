@@ -45,6 +45,7 @@ public class Movement : MonoBehaviour {
         rigidbody2D.angularVelocity = 0.0f;
     }
 
+    // All functions that take level as argument are used to upgrade the dash ability based on what was bought in the upgrade store 
     public void SpeedIncrease(int level)
     {
         switch (level)
@@ -144,6 +145,7 @@ public class Movement : MonoBehaviour {
 
     void Update()
     {
+        // Handles the useage and cooldown of the dash ability
         if (Input.GetButtonDown("Jump") && currentCooldownTime <= 0 && DashEnabled)
         {
             audioManager.GetComponent<AudioController>().PlayDashSound();

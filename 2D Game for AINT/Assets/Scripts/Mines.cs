@@ -7,6 +7,7 @@ public class Mines : MonoBehaviour {
     public float damage;
     public float maxRadius;
 
+    // script on mines used to detect when an enemy steps on one and will spawn the MineDeath object which as a rappidly expanding circle collider on it to do damage
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Enemy")

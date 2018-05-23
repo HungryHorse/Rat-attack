@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
 
+    // this could be used to spwan enemies but I went with preplaced enemies instead
     //Might not be multiple but might as well make it so it could be
     public int amount;
     public float timeBetween;
