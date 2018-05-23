@@ -12,7 +12,7 @@ Art:
 The rat in the title art was made by a friend with full permisions and rights
 
 Music:
-The all the music was made by Kevin MacLeod (https://incompetech.com/)
+All the music was made by Kevin MacLeod (https://incompetech.com/)
 -The Lift - "The Lift" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 3.0 License http://creativecommons.org/licenses/by/3.0/
 -Laser Groove - "Laser Groove" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 3.0 License http://creativecommons.org/licenses/by/3.0/
 
