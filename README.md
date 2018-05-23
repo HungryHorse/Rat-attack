@@ -2,10 +2,10 @@
 Game for AINT 152, 2D top down
 
 
-Jack Jay Brewer
-10575202
-Computer Games Development
-AINT152
+Jack Jay Brewer-
+10575202-
+Computer Games Development-
+AINT152-
 Unity 2D Zombie Shooter
 
 Art:
